@@ -1,0 +1,669 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>3d tutorial - model controls (2)</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" endspan i-checksum="27619" -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability</a>
+      &gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; <a href="../default.htm">Training</a>
+      &gt; <a href="default.htm">3D Tutorial</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="model_controls.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="thermal_analysis.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="22422" -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+                      <h1>SC03 3D Thermal Modelling</h1>
+                      <h6 class="largehead">Section 5: Model Controls (2)</h6>
+                                    <ul>
+										<li>
+                                          <p class="mediumText"><a href="#Domain">Domain
+                                          Control</a>
+										<li>
+                                          <p class="mediumText"><a href="#Suppress_mesh">Suppress
+                                          Mesh Refinement</a>
+										<li>
+                                          <p class="mediumText"><a href="#Input_check">Input
+                                          checking</a>:
+                                          <ul>
+                                            <li>
+                                              <p class="mediumText"><a href="#Query">Query</a></li>
+                                            <li>
+                                              <p class="mediumText"><a href="#tb_display">Thermal
+                                              boundary condition display</a>
+                                            </li>
+                                            <li>
+                                              <p class="mediumText"><a href="#summary_print">Summary
+                                              print</a>
+                                            </li>
+                                          </ul>
+                                    </ul>
+									<div class="smallhead">
+										<div class="smallhead">
+											<div class="smallhead">
+												<hr size="1" width="100%">
+											</div>
+										</div>
+									</div>
+                      <p class="largehead"><a name="Domain">Domain Control</a></p>
+
+    <p class="mediumText">The <b>Domain Control</b> panel
+    is used to define all properties for a domain.</p>
+
+    <p class="mediumText" align="center"><img src="images/domcnt.gif" alt="domcnt.gif (14590 bytes)" width="550" height="300"></p>
+    <p class="mediumText">The domain label (top left on the panel) is
+    actually a push button. When this button is pressed using the mouse controls, the control
+    panel will clear and you can then detect a domain on any part of the model.</p>
+    <p class="mediumText">The outline of that domain is then
+    highlighted (if geometry is present) and the control panel returns with the specified
+    domain number filled in.</p>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">Select the <b> Domain</b> button and click on the
+            inner shaft of the tutorial problem.
+            The shaft is now highlighted as Domain 1.
+            <p class="mediumText">The panel will now show Domain 2; again select on the <b> Domain</b> button and click on the outer
+            disc/shaft to define this as Domain 2.
+                            <p class="mediumText">&nbsp;</td>
+                        </tr>
+                      </table>
+
+                      <p class="mediumText">&nbsp;</p>
+                      <table border="1" cellspacing="0" width="100%" bordercolor="#336699" cellpadding="5">
+                        <tr>
+                          <td width="100%" bgcolor="#E8E9F3">
+                            <p class="mediumhead"><a name="Did_you_know...?">Did
+                            you know...?</a></p>
+                            <p class="mediumText">All materials used in
+                            Rolls-Royce are identified by a three-letter code.
+                            The first letter tells you the type of material
+                            (e.g. materials beginning with A are steels; those
+                            beginning with T are titanium alloys.</p>
+                            <p class="mediumText">For more details, click <a href="/materials_specifications/Reference/book.htm">here</a>.</p>
+                          </td>
+                        </tr>
+                      </table>
+
+<p class="mediumText" align="left">&nbsp;
+                      </p>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Now choose <b>Domain 1</b>  (shaft), and select
+            the <b>GET </b>button. An <b>Available Materials </b>panel will now appear.</p>
+                            <p class="mediumText">Select the <b>COMMIT Database</b> option. A <b>Materials
+            on COMMIT</b> panel will appear.</p>
+                            <p class="mediumText">Use the mouse to select the materials <b>AEF</b>
+            and <b>TDX</b>. If you choose the
+        wrong material by mistake, select <b>UNDO.</b></p>
+                            <p class="mediumText">Now select <b>OK</b> on the <b>Materials on
+            COMMIT </b> panel. When the<b>  Confirm Material Symmetry</b> panel appears choose the <b>Isotropic</b> option for both materials, and
+            select <b>OK</b>.</p>
+                            <p class="mediumText">Using the <b>GET </b>button, select material property
+            <b>TDX</b> for <b>Domain 1</b>,
+        and material property <b>AEF</b> for <b>Domain</b> <b> 2</b>.</p>
+                            <p class="mediumText">Now complete the <b>Domain Contro</b>l panel as follows:</td>
+                        </tr>
+                      </table>
+    <p class="mediumText">&nbsp;</p>
+
+                      <blockquote>
+                      <table cellPadding="6" width="353" border="0">
+                        <tr>
+                          <td width="94" bgColor="#336699" align="center" class="mediumText">
+                            <p align="center"><b><font color="#FFFFFF">---</font></b></p>
+                          </td>
+                          <td width="91" bgColor="#336699" align="center" class="mediumText"><b><font color="#FFFFFF">Domain
+                            1</font></b></td>
+                          <td width="118" bgColor="#336699" align="center" class="mediumText"><b><font color="#FFFFFF">Domain
+                            2</font></b></td>
+                        </tr>
+                        <tr>
+                          <td vAlign="top" width="94" bgColor="#ecf2f8" class="mediumText" align="center"><b>Name</b></td>
+                          <td vAlign="top" width="91" bgColor="#ecf2f8" class="mediumText" align="center">Shaft</td>
+                          <td vAlign="top" width="118" bgColor="#ecf2f8" class="mediumText" align="center">Disc</td>
+                        </tr>
+                        <tr>
+                          <td vAlign="top" width="94" bgColor="#FFFFFF" class="mediumText" align="center"><b>Speed</b></td>
+                          <td vAlign="top" width="91" bgColor="#FFFFFF" class="mediumText" align="center">ni</td>
+                          <td vAlign="top" width="118" bgColor="#FFFFFF" class="mediumText" align="center">nh</td>
+                      </tr>
+<tr>
+  <td vAlign="top" width="94" bgColor="#ECF2F8" class="mediumText" align="center"><b>Type</b></td>
+  <td vAlign="top" width="91" bgColor="#ECF2F8" class="mediumText" align="center">3D</td>
+  <td vAlign="top" width="118" bgColor="#ECF2F8" class="mediumText" align="center">3D</td>
+</tr>
+                      </table>
+
+                      </blockquote>
+
+<p class="mediumText" align="left">&nbsp;</p>
+
+<p class="mediumText" align="left">Also on the control panel there are a
+number of headings. e.g. <b>Orientation</b>, <b>Thickness</b>, <b> Thermal Loads</b>,
+<b> Structural Loads</b>, <b> Copy
+changes to all</b>, and <b> Copy domain to all</b>.</p>
+
+                      <table border="0" width="100%">
+                        <tr>
+                          <td width="55%" valign="top">
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE" valign="top">
+                            <p class="mediumText">Click on the heading <b>Thermal Loads</b>
+            for Domain 1.</p>
+                            <p class="mediumText">Fill in the <b>Thermal Loads</b> panel for
+            Domain 1 as shown</td>
+                        </tr>
+                      </table>
+
+                            <p>&nbsp;</td>
+                          <td width="45%" valign="top">
+      <table cellPadding="6" width="98%" border="0" bgcolor="#FFFFFF">
+        <tbody>
+          <tr>
+            <td width="66%" bgColor="#336699" colspan="2">
+              <p align="center"><b><font color="#ffffff" size="2">Thermal Loads</font></b></p>
+            </td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="48%" bgColor="#ecf2f8" class="mediumText">Initial
+              metal temperature</td>
+            <td vAlign="top" width="18%" bgColor="#ecf2f8" class="mediumText">288.15</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="48%" bgColor="#FFFFFF" class="mediumText">Degrees</td>
+            <td vAlign="top" width="18%" bgColor="#FFFFFF" class="mediumText">K</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="48%" bgColor="#ecf2f8" class="mediumText">Enabled</td>
+            <td vAlign="top" width="18%" bgColor="#ECF2F8" class="mediumText">On</td>
+          </tr>
+        </tbody>
+      </table>
+                          </td>
+                        </tr>
+                      </table>
+
+<p class="mediumText" align="left" style="margin: 0">&nbsp;</p>
+
+                      <table border="0" width="100%">
+                        <tr>
+                          <td width="55%" valign="top">
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE" valign="top">
+                            <p class="mediumText">Once you have
+            completed the panel for Domain 1, repeat for Domain 2:</td>
+                        </tr>
+                      </table>
+
+                            <p>&nbsp;</td>
+                          <td width="45%" valign="top">
+      <table cellPadding="6" width="98%" border="0" bgcolor="#FFFFFF">
+        <tbody>
+          <tr>
+            <td width="66%" bgColor="#336699" colspan="2">
+              <p align="center"><b><font color="#ffffff" size="2">Thermal Loads</font></b></p>
+            </td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="48%" bgColor="#ecf2f8" class="mediumText">Initial
+              metal temperature</td>
+            <td vAlign="top" width="18%" bgColor="#ecf2f8" class="mediumText">288.15</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="48%" bgColor="#FFFFFF" class="mediumText">Degrees</td>
+            <td vAlign="top" width="18%" bgColor="#FFFFFF" class="mediumText">K</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="48%" bgColor="#ecf2f8" class="mediumText">Enabled</td>
+            <td vAlign="top" width="18%" bgColor="#ECF2F8" class="mediumText">On</td>
+          </tr>
+        </tbody>
+      </table>
+                          </td>
+                        </tr>
+                      </table>
+    <p align="left" class="mediumText">&nbsp;</p>
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" msimagelist>
+                        <tr msimagelist>
+                          <td valign="baseline" width="42" msimagelist><img src="../images/info.gif" width="35" height="34" hspace="3"></td>
+                          <td valign="top" width="100%"><p class="mediumText">Fields can be
+        propagated from the currently selected domain using the <b>Copy Changes to
+                            all</b>
+        button. The<b> Copy Domain
+        to all </b> button will make all domains identical to the current one. Use with care!</td msimagelist>
+                        </tr>
+                      </table msimagelist>
+                            <p class="mediumText">&nbsp;
+                                    <hr size="1">
+    </CENTER>
+                                <p class="largehead" align="left"><a name="Suppress_mesh">Suppress
+                                mesh refinement</a></p>
+
+    <p class="mediumText">By default SC03 will attempt to refine the mesh to achieve
+    the requested accuracy. We must therefore suppress all mesh refinement.</p>
+
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Open the <b> Mesh Menu</b> by
+        selecting <b>Mesh</b> then select <b> Suppress Refinement</b> then select the
+            <b>Block</b>...
+            option</td>
+                                  </tr>
+                                </table>
+    <p align="center" class="mediumText"><img src="images/3dtutor.supp_mesh_refine_panel.gif" width="389" height="161"></p>
+
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">When the + cursor
+        appears define a block/window that fully encompasses the analysis model by
+            holding the
+        left mouse button and dragging out a rectangle; this becomes a block with depth
+        perpendicular to the screen covering the extent of the model.</td>
+                                  </tr>
+                                </table>
+    <p align="center" class="mediumText"><img src="images/3dtutor53.gif" width="219" height="208"></p>
+                                <hr size="1">
+                                <p class="largehead" align="left"><a name="Input_check">Input
+                                checking</a></p>
+
+    <p class="mediumText">All thermal boundary conditions for the
+    problem that we have been tackling in this training module have now been defined.</p>
+    <p class="mediumText">Due to the large number of expressions used
+    in Thermal Analysis it is recommended that all input data is checked before analysis.</p>
+    <p class="mediumText">In addition it is essential that all
+    calculated boundary condition data is checked following an analysis.</p>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" msimagelist>
+                                  <tr msimagelist>
+                                    <td valign="baseline" width="42" msimagelist><img src="../images/info.gif" width="35" height="34" hspace="3"></td>
+                                    <td valign="top" width="100%">
+                                      <p class="mediumText">For further information, see&nbsp;<a href="/genthermal/best_practices/temperature/fe/input_check.htm"> Best Practice on Model
+        Input Checking&nbsp;</a></td msimagelist>
+                                  </tr>
+                                </table msimagelist>
+    <p class="mediumText">The following facilities exist in SC03 to
+    aid the checking of analysis models.</p>
+                                <ul>
+                                  <li>
+                                    <p class="mediumText"><a href="#summary_print">Query</a></li>
+                                  <li>
+                                    <p class="mediumText"><a href="#tb_display">Thermal Boundary Condition Display</a></li>
+                                  <li>
+                                    <p class="mediumText"><a href="#summary_print">Summary Print</a></li>
+                                </ul>
+    <p class="mediumText">The next three parts below explain each of these
+    facilities in more detail. scroll down or click on one of the links
+    above for information on a particular item.</p>
+                                <hr size="1">
+                                <p class="largehead" align="left"><a name="Query">Input
+                                checking - Query</a></p>
+
+                                <p class="mediumText">The Query command is used to report the
+    current value and allow editing of any boundary conditions on a surface.</p>
+
+                                <p class="mediumText">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select
+            the <b> Query BC</b> command from the <b> Model</b> Menu inside
+            the box and check the thermal boundary conditions previously defined.</td>
+                                  </tr>
+                                </table>
+                                      <p class="mediumText">&nbsp;
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" msimagelist>
+                                  <tr msimagelist>
+                                    <td valign="baseline" width="42" msimagelist><img src="../images/info.gif" width="35" height="34" hspace="3"></td>
+                                    <td valign="top" width="100%">
+                                      <p class="mediumText">The model can be
+        manipulated within any command. There is no need to end the Query command to move or zoom
+        in/out of the model.</td msimagelist>
+                                  </tr>
+                                </table msimagelist>
+                                      <p class="mediumText">&nbsp;
+                                <hr size="1">
+                                <p class="largehead" align="left"><a name="tb_display">Input
+                                checking - Thermal Boundary Condition Display</a></p>
+
+    <p class="mediumText">On complex models, it is often difficult to
+    determine where individual thermal boundary conditions have been assigned. The
+    <b> Display/Property Display/Therm BC</b> tab option allows single or multiple boundary conditions of a
+    particular type to be colour highlighted or displayed using symbols.</p>
+
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select the '<b>Display Menu</b>' and Property <b> Display</b>
+            as before, then select
+            the Thermal BC (<b>Therm BC</b>) tab on the panel.</td>
+                                  </tr>
+                                </table>
+    <p align="center" class="mediumText"><img src="images/2dtutor.prop_disp_panel_thermBC.gif" width="459" height="332"></p>
+
+<table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+  <tr>
+    <td>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+        <tr>
+          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">Set the Thermal
+            BC controls to those shown above and move the model to see how a single boundary condition
+            is highlighted.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+                                      <p class="mediumText">&nbsp;
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" msimagelist>
+                                  <tr msimagelist>
+                                    <td valign="baseline" width="42" msimagelist><img src="../images/info.gif" width="35" height="34" hspace="3"></td>
+                                    <td valign="top" width="100%">
+                                      <p class="mediumText">The boundary
+        condition symbol size is controlled by the Line Contour Label Size. This is changed from
+        the <b> Display Settings/ Miscellaneous</b> option on the <b>Display</b> Menu.</td msimagelist>
+                                  </tr>
+                                </table msimagelist>
+                                      <p class="mediumText">&nbsp;
+                                <hr size="1">
+                                <p class="largehead"><a name="summary_print">Input
+                                checking - Summary Print</a></p>
+    <p class="mediumText">While the Query command is useful for
+    checking and editing individual boundary conditions, it is not suitable for completing a
+    thorough check of all input data.</p>
+    <p class="mediumText">This can be achieved by generating a
+    summary print (.prt) file.</p>
+    <table border="0" width="100%" height="790" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="29%" height="132" valign="top">
+
+<table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+  <tr>
+    <td>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+        <tr>
+          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">Open the '<b>File Menu</b>' by selecting '<b>File</b>' with the left mouse button</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        <p class="mediumText">&nbsp;</td>
+        <td width="71%" height="132" valign="top"><p align="center" class="mediumText"><img src="images/2dtutor.sc03_filemodel_menubar.gif" width="191" height="126"></td>
+      </tr>
+      <tr>
+        <td width="29%" height="297" valign="top">
+
+<table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+  <tr>
+    <td>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+        <tr>
+          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">then Select the <b> Save File</b> command with the left mouse button and
+            click the <b> Summary Tab</b> on
+            the <b> Save</b> File panel. Enter a summary file name in the panel
+            (ending with <b> .prt</b>) and click OK.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        <p class="mediumText">&nbsp;</p>
+        <p class="mediumText">&nbsp;</td>
+        <td width="71%" height="297" valign="top"><p align="center" class="mediumText"><img src="images/2dtutor.sc03_file_pulldown.gif" width="175" height="293"></td>
+      </tr>
+      <tr>
+        <td width="29%" height="343" valign="top">
+
+<table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+  <tr>
+    <td>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+        <tr>
+          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">In the <b> Summary
+            File Contents</b> panel select the <b> All</b> option for the Physics Model.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        <p class="mediumText">&nbsp;</p>
+          <p class="mediumText">&nbsp;</p>
+          <p class="mediumText">&nbsp;</td>
+        <td width="71%" height="343" valign="top"><p align="center" class="mediumText"><img src="images/2dtutor.summ_file_content_panel.gif" width="343" height="306"></p>
+        <p class="mediumText">&nbsp;</td>
+      </tr>
+    </table>
+    <p class="mediumText">A listing of all boundary conditions
+    expressions will be written to the .prt file, and a window opened displaying the contents
+    of the file.</p>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" msimagelist>
+                                  <tr msimagelist>
+                                    <td valign="baseline" width="42" msimagelist><img src="../images/info.gif" width="35" height="34" hspace="3"></td>
+                                    <td valign="top" width="100%">
+                                      <p class="mediumText">The Summary
+        Print file contents depends on what is contained within the current SC03 session. We will
+        use the Summary Print option later to generate a summary of calculated boundary condition
+        values, when results have been evaluated.</td msimagelist>
+                                  </tr>
+                                </table msimagelist>
+                                <p class="mediumText">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Check
+            all thermal boundary condition expressions are correctly defined.</td>
+                                  </tr>
+                                </table>
+                                <p class="mediumText">&nbsp;</p>
+
+                                    <hr size="1">
+									<p align="left">&nbsp;</p>
+									<p align="left">Page Author (s): <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+                                    Barnes<br>
+                                    </a>Page Version: 2.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->07/12/2006<!--webbot bot="Timestamp" endspan i-checksum="12542" -->
+                                </p>
+								</td>
+							</tr>
+						</table>
+						<div align="center">
+							<p align="center"><br>
+                            <span class="footlinks"><a class="footlinks" href="model_controls.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="thermal_analysis.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+  </TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/3d_tutorial_links.htm" TAG="BODY" startspan -->
+
+      <h2 align="left"><b>3D Tutorial Links</b></h2>
+
+      <UL>
+        <LI><a href="default.htm">Menu</a>
+        <LI><a href="introduction.htm">Introduction</a>
+        <LI><a href="geom_mesh.htm">Geometry &amp; Mesh</a>
+        <LI><a href="cycle_definitions.htm">Cycle
+          Definitions</a>
+        <LI><a href="../2d_tutorial/vw34.htm">VW34 (<i>optional)</i></a>
+        <LI><a href="boundary_conditions1.htm">Boundary
+          Conditions</a>
+        <LI><a href="model_controls.htm">Model Controls</a>
+        <LI><a href="thermal_analysis.htm">Thermal analysis</a>
+        <LI><a href="results_processing.htm">Results
+          Processing</a>
+        <LI><a href="mastery_test.htm">Mastery Test</a>
+      </UL>
+
+<!--webbot bot="Include" endspan i-checksum="919" -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" endspan i-checksum="58695" -->
+
+</body>
+
+</html>

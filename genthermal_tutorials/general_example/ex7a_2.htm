@@ -1,0 +1,531 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>Exercise 7 - Matching using SOFT - part 2</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" i-checksum="27619" endspan -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability</a>
+      &gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; &nbsp;<a href="../default.htm">Training
+      </a>&gt; <a href="default.htm">General
+      Example Problems</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="ex7a_1.htm">back to previous
+                            </a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="default.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" i-checksum="22422" endspan -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+                      <h1>Exercise 7 - Thermal matching using SOFT&nbsp;</h1>
+                      <ul>
+                        <li>
+                          <p class="mediumText"><a href="ex7a_1.htm#Introduction">Introduction</a></li>
+                        <li>
+                          <p class="mediumText"><a href="ex7a_1.htm#Set up model">Set up
+                          model</a></li>
+                        <li>
+                          <p class="mediumText"><a href="ex7a_1.htm#Specify design parameters">Specify design parameters</a></li>
+                        <li>
+                          <p class="mediumText"><a href="#Define optimisation sequence">Define optimisation sequence</a></li>
+                        <li>
+                          <p class="mediumText"><a href="#Monitor the results">Monitor the results</a></li>
+                      </ul>
+                      <hr size="1">
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                      </table>
+
+    </CENTER>
+                                <p class="largehead" align="left"><a name="Define optimisation sequence">Define
+                                optimisation sequence</a></p>
+<CENTER>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <ol>
+                              <li>
+                                <p class="mediumText" align="left">
+                                Specify the number of simulation sequences (one,
+                                for a single Simulated Annealing optimisation;
+                                two, for multitask optimisation using Simulated
+                                Annealing plus a gradient based optimiser). Then
+                                hit return. See the <a href="/genthermal/best_practices/analysis_tools/optimisation/soft/default.html"> best practice</a> for a
+                                description of a number of optimisation
+                                strategies applicable to a thermal matching
+                                exercise.</li>
+                              <li>
+                                <p class="mediumText" align="left">
+                                Click on the <b>Optimiser1 </b> selection box, and
+                                select <b>Simulated Annealing </b> as the
+                                optimisation algorithm. Note that a number of
+                                optimisation algorithms (heuristic and gradient
+                                based optimisers), design of experiment and
+                                response surface techniques are currently
+                                available in SOFT. Select <b>Simulated</b> as the
+                                cost option (The cost will be calculated by
+                                using a simulation code, i.e. SC03). Use 100 as
+                                the number of optimisation runs. For the second
+                                optimisation sequence, choose the gradient based
+                                method <b>Dynamic Hill Climber</b> with the
+                                simulated cost and for 100 iterations. Then
+                                click on <b>Next</b>.</li>
+                            </ol>
+                          </td>
+                        </tr>
+                      </table>
+
+    </CENTER>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.6x.gif" width="553" height="352"></p>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <blockquote>
+                                <p class="mediumText" align="left">Accept the
+                                default settings for the Simulated Annealing and
+                                the Dynamic Hill Climber optimisers. Then click
+                                on<b> Next</b>.
+                            </blockquote>
+                          </td>
+                        </tr>
+                      </table>
+
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.7x.gif" width="553" height="353"></p>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.8x.gif" width="553" height="352"></p>
+<CENTER>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <ol start="3">
+                              <li>
+                                <p class="mediumText">Specify the design
+                                parameter file (e.g. sc03_input.usp) and the
+                                number of simulation codes (in this example only
+                                one).</li>
+                            </ol>
+                            <blockquote>
+                              <blockquote>
+                                <p class="mediumText"><font face="Courier New">sc03_input.usp file<br>
+                                fcsh23= 1.360266<br>
+                                fcsh24= 0.504590<br>
+                                fcsh25= 1.190304<br>
+                                fcsh26= 1.267918<br>
+                                fcsh37= 0.828406<br>
+                                fcsh50= 1.184150<br>
+                                fcsh61= 1.304139<br>
+                                fcsh62= 1.752935<br>
+                                fcvh5=&nbsp;&nbsp; 1.996117<br>
+                                fcdh8= 0.672515</font></p>
+                              </blockquote>
+                                <p class="mediumText">Then hit return. In the code box, specify the
+                                name of the sc03 script (i.e. run_script.script).
+                                This should be prefixed with <b> ./ </b> to ensure that
+                                soft looks for it in the current directory (also
+                                make sure that the file is set to be
+                                executable).&nbsp;</p>
+                                <p class="mediumText"> In the <b> No. files</b> box, specify the
+                                number of objective functions (in other words,
+                                the number of thermocouples considered for this
+                                thermal matching exercise) and hit return. Then
+                                specify the name of the cost function file (e.g.
+                                GRdiffp1.out, GRdiffp2.out etc). Note that
+                                weighting factors equal to one are used as
+                                default values. Then click on<b> Next</b>.</p>
+                            </blockquote>
+                          </td>
+                        </tr>
+                      </table>
+
+    </CENTER>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.9x.gif" width="553" height="352"></p>
+<CENTER>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <ol start="4">
+                              <li>
+                                <p class="mediumText">On the
+                                Graphic Setup panel select the <b>dynamic
+                                plotting of the graph</b> option. Then specify
+                                999 as the number of runs displayed. By default,
+                                SOFT will plot the objective function against
+                                the number of evaluation. It is up to the user
+                                to plot additional quantities (such as raw cost,
+                                or individual design variables). Then click on <b>
+                                Next.</b></li>
+                            </ol>
+                          </td>
+                        </tr>
+                      </table>
+
+    </CENTER>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.10x.gif" width="553" height="352"></p>
+<CENTER>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <ol start="5">
+                              <li>
+                                <p class="mediumText" align="left">Ensure the
+                                following script to run SC03 in batch mode (run_script.script)
+                                is present in your working directory. Note that
+                                this script slightly differs from the script
+                                needed to perform thermal matching using ISIGHT.
+                                In particular the numerical values obtained from
+                                the nawk commands are stored in standalone files
+                                (instead of only one file). Ensure that the
+                                filenames specified in this script (i.e.
+                                GRdiffp1.out, GRdiffp2.out etc) are identical
+                                to those specified in the SOFT simulation code
+                                selection pane</li>
+                            </ol>
+                            <blockquote>
+                              <blockquote>
+                                <p class="mediumText" align="left"><font face="Courier New">#!/bin/csh
+                                –funset noclobber<br>
+                                echo &quot;starting sc03&quot;<br>
+                                cp ~/.sc03init ~/.sc03init.bacup<br>
+                                /usr/rreng/bin/sc03_load -b &lt; run_sc03.exec
+                                &gt; sc03.diag<br>
+                                # sc03 -c run_sc03.exec &gt; sc03.diag<br>
+                                cp ~/.sc03init.bacup ~/.sc03init<br>
+                                echo &quot;sc03 finished&quot;<br>
+                                nawk -f sum_error.awk GRdiffp1.item &gt;!
+                                ./GRdiffp1.out<br>
+                                nawk -f sum_error.awk GRdiffp2.item &gt;!
+                                ./GRdiffp2.out<br>
+                                nawk -f sum_error.awk GRdiffp3.item &gt;!
+                                ./GRdiffp3.out<br>
+                                nawk -f sum_error.awk GRdiffp4.item &gt;!
+                                ./GRdiffp4.out<br>
+                                nawk -f sum_error.awk GRdiffp5.item &gt;!
+                                ./GRdiffp5.out<br>
+                                nawk -f sum_error.awk GRdiffp6.item &gt;!
+                                ./GRdiffp6.out<br>
+                                nawk -f sum_error.awk GRdiffp7.item &gt;!
+                                ./GRdiffp7.out<br>
+                                exit 0</font></p>
+                              </blockquote>
+                                <p class="mediumText" align="left">The following
+                                scripts must be also available in your working
+                                directory:
+                                </p>
+                              <blockquote>
+                                <p class="mediumText" align="left">
+                                run_sc03.exec &nbsp;<br>
+                                sum_error.awk &nbsp;
+                                </p>
+                              </blockquote>
+                                <p class="mediumText" align="left">Note that the sum_error.awk script may require
+                                updating in order to use it with different
+                                flight cycles or with different averaging
+                                methods.
+                                </p>
+                            </blockquote>
+                            <ol start="6">
+                              <li>
+                                <p class="mediumText">On the Run
+                                parameters panel, click on OK to confirm the
+                                parameters values and start the run.</li>
+                            </ol>
+                          </td>
+                        </tr>
+                      </table>
+
+    </CENTER>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.11x.gif" width="553" height="352"></p>
+                                <hr size="1">
+                                <p class="largehead"><a name="Monitor the results">Monitor
+                                the results</a></p>
+                                <p class="mediumText">The following is a typical
+                                SOFT convergence history that should appear on
+                                the screen.&nbsp;</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.12y.gif" width="553" height="473"></p>
+                                <p class="mediumText">Convergence and design
+                                parameters values can be obtained in the
+                                softest3.hist.best and softest3.hist.dat files
+                                (see below).</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT1.13y.gif" width="553" height="325"></p>
+                                <p class="mediumText">SOFT creates a template
+                                file (with .tmp extension) that captures all the
+                                procedure described above. An example of a
+                                template file is provided here. The template
+                                file contains all the information necessary to
+                                run a test case consisting of the design
+                                parameters, the constraints, the optimiser type,
+                                the simulation programs’ executable filenames
+                                and information about the graphic
+                                displays.&nbsp;</p>
+<CENTER>
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                                <p class="mediumText">To start SOFT with a
+                                particular template file, type:
+                                <p class="mediumText">ss01 -p t -td . -f
+                                template_name.tmp
+                          </td>
+                        </tr>
+                      </table>
+
+    </CENTER>
+                                <p class="mediumText">The file hist.dat lists
+                                all the elements of the design parameters,
+                                objective value, constrained value(s) followed
+                                by the cost value which is actually passed to
+                                the optimiser.&nbsp;</p>
+                                <p class="mediumText">The file hist.best file
+                                lists the best five optimisation solutions so
+                                far that achieve all the constraints. The
+                                frequency with which this file is updated is set
+                                by defaults to 10 iterations but can be changed
+                                in the run window.</p>
+                                <p class="mediumText">A program has been
+                                developed in order to search the history file
+                                for the optimum set of design parameters and
+                                write them in usp format so that they can be
+                                read in SC03 for verification. Contact Diego
+                                Benito (49063) for a copy of this program.</p>
+                                <p class="mediumText">Run SC03 with the optimum
+                                set of design parameters and check the
+                                temperature difference between the test and the
+                                SC03 prediction.</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/SOFT3.3.gif" width="553" height="322"></p>
+                                <hr size="1">
+                                <p class="largehead">References</p>
+                                <ol>
+                                  <li>
+                                    <p class="mediumText">Shahpar, S., “SOFT:
+                                    A New Design and Optimisation Tool for
+                                    Turbomachinery”, Eurogen 2002, 2002.</li>
+                                  <li>
+                                    <p class="mediumText">Shahpar, S., “Smart
+                                    Optimisation For Turbomachinery (SOFT)
+                                    System”, Rolls-Royce internal report,
+                                    DNS75876, 2000.</li>
+                                  <li>
+                                    <p class="mediumText">Ingbar, L.,
+                                    &quot;Adaptive Simulated Annealing (ASA)&quot;,
+                                    Lester Ingbar Research, Mclean, VA., 1993.</li>
+                                  <li>
+                                    <p class="mediumText">Shahpar, S., “User
+                                    guide to Force and F1, version 1.3e”,
+                                    Rolls-Royce Internal Memorandum, November
+                                    2001.</li>
+                                  <li>
+                                    <p class="mediumText">Shahpar, S. and
+                                    Wiseall, S., “Design and Analysis of
+                                    Computer Experiments (DACE) for Building
+                                    Approximation Models, Part I”, Rolls-Royce
+                                    internal report, DNS80189, 2001.</li>
+                                </ol>
+                                <p class="mediumText">&nbsp;</p>
+<CENTER>
+
+                                    <hr size="1">
+    </CENTER>
+									<p align="left">Page Author (s): <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+                                    Barnes<br>
+                                    </a>Page Version: 2.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->24/07/2006<!--webbot bot="Timestamp" i-checksum="12610" endspan -->
+                      </p>
+								</td>
+							</tr>
+						</table>
+<CENTER>
+						<div align="center">
+							<p><br>
+                            <span class="footlinks"><a class="footlinks" href="ex7a_1.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="default.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+    </CENTER></TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/General_example_links.htm" TAG="BODY" startspan
+        -->
+
+      <h2 align="left"><b>General Example Links</b></h2>
+
+      <ul>
+        <li><a href="default.htm"> Home</a></li>
+        <li><a href="introduction_to_the_general_exam.htm">Introduction</a></li>
+        <li><a href="model_details.htm">Model Details</a></li>
+        <li><a href="ex_1.htm">Exercise 1</a></li>
+        <li><a href="ex_2.htm">Exercise 2</a></li>
+        <li><a href="ex_3.htm">Exercise 3</a></li>
+        <li><a href="ex_4.htm">Exercise 4</a></li>
+        <li><a href="ex_5.htm">Exercise 5</a></li>
+        <li><a href="ex_6_1.htm">Exercise
+          6</a></li>
+        <li><a href="ex7a_1.htm">Exercise 7</a></li>
+        <li><a href="ex_8.htm">Exercise 8</a></li>
+      </ul>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" i-checksum="46435" endspan -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" i-checksum="58695" endspan -->
+
+</body>
+
+</html>

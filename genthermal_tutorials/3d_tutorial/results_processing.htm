@@ -1,0 +1,590 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>3d tutorial - results processing</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" endspan i-checksum="27619" -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability</a>
+      &gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; <a href="../default.htm">Training</a>
+      &gt; <a href="default.htm">3D Tutorial</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="thermal_analysis.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="results_processing_2.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="22422" -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+                      <h1>SC03 3D Thermal Modelling</h1>
+                      <h6 class="largehead">Section 7: Results Processing</h6>
+                      <p class="largehead"><a name="Objectives">Objectives of
+                      this Section</a></p>
+
+<p class="mediumText">When you have completed this section you will be able to: 
+
+<ul>
+  <li>
+    <p class="mediumText">list the types of data that must be checked for accuracy</li>
+  <li>
+    <p class="mediumText">describe 4 different ways in which results can be processed and
+    represented in SC03</li>
+</ul>
+
+                      <h6 class="largehead"><a name="Learning">Learning Points
+                      of this Section</a></h6>
+                      <ol>
+                        <li>
+                          <p class="mediumText"><a href="#Check_Results">Checking the model results</a></li>
+                        <li>
+                          <p class="mediumText"><a href="#thermal_model_results">Displaying and presenting the
+                          results</a> by means of:
+                          <ul>
+                            <li>
+                              <p class="mediumText"><a href="#thermal_model_results">Contour plots</a></li>
+                            <li>
+                              <p class="mediumText"><a href="#get_result_values">Result values (Get Values)</a></li>
+                            <li>
+                              <p class="mediumText"><a href="results_processing_2.htm#timeplots">Time plots</a></li>
+                            <li>
+                              <p class="mediumText"><a href="results_processing_2.htm#defgraphs">User-defined graphs</a></li>
+                          </ul>
+                        </li>
+                      </ol>
+    </CENTER>
+<CENTER>
+                                    <hr size="1">
+    </CENTER>
+                                <h6 class="largehead"><a name="Check_Results">Check
+                                Results</a></h6>
+                                <p class="mediumText">It is very easy to believe
+                                component temperatures predicted by the analysis
+                                program, but they are totally dependent on the
+                                accuracy of the boundary condition assumptions.</p>
+                                <p class="mediumText">An extensive check of all
+                                of the following data must be completed, and
+                                where possible confirmed by hand calculation, or
+                                by comparison with air/oil system model data.</p>
+                                <p class="mediumhead">Data for checking</p>
+                                <ul>
+                                  <li>
+                                    <p class="mediumText">fluid type (boundary
+                                    conditions other than air only)
+                                  <li>
+                                    <p class="mediumText">mass flows
+                                  <li>
+                                    <p class="mediumText">fluid temperatures
+                                  <li>
+                                    <p class="mediumText">fluid pressures
+                                  <li>
+                                    <p class="mediumText">heat transfer
+                                    coefficients
+                                  <li>
+                                    <p class="mediumText">material type</li>
+                                </ul>
+                                <p class="mediumText">There are a number of
+                                facilities available to aid the checking
+                                process. These are explained below.</p>
+
+<CENTER>
+                                    <hr size="1">
+    </CENTER>
+                                <h6 align="left" class="largehead"><a name="Summary">Summary
+                                Print</a></h6>
+
+<p class="mediumText">A thorough check of all evaluated thermal boundary
+condition data can be completed by generating a summary print (.prt) file of the analysis
+results.</p>
+
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">Open the<b> File Menu</b> by selecting<b>
+            File</b>/ <b>
+            Save
+        File</b> command&nbsp; and click the <b>Summary</b>
+            tab on the <b>Save File</b> panel.
+            <p class="mediumText">Enter a summary file name in the panel (ending
+            with .prt) and click <b>OK</b>.
+            <p class="mediumText">In the <b>Print File Contents</b> panel select the <b>All</b> option for the
+            <b> Thermal Results</b>.
+            <p class="mediumText">In the <b>Thermal Results Units </b>panel
+            select <b>pure MKS</b>  (or your preferred units system).</td>
+                                  </tr>
+                                </table>
+                                <p align="center"><font size="3" face="Arial"><img src="../2d_tutorial/images/2dtutor.therm_result_unit_panel.gif" width="315" height="202"></font></p>
+
+                                <p class="mediumText">Available unit systems are shown
+    below:
+                                <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                                <table border="0" width="100%" bgcolor="#FFFFFF" height="101" cellpadding="6">
+                                  <tr>
+                                    <td width="14%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>Name</b></font></td>
+                                    <td width="14%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>Flow</b></font></td>
+                                    <td width="14%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>Speed</b></font></td>
+                                    <td width="14%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>Pressure</b></font></td>
+                                    <td width="14%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>Temp.</b></font></td>
+                                    <td width="15%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>htc</b></font></td>
+                                    <td width="15%" class="mediumText" height="18" bgcolor="#336699" bordercolor="#FFFFFF"><font color="#FFFFFF" size="2"><b>Flux</b></font></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="14%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">SC03</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">Mg/s</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">RPM</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">MPa</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">K</td>
+                                    <td width="15%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">mW/mm<sup>2</sup>/K</td>
+                                    <td width="15%" bgcolor="#FFFFFF" height="19" class="mediumText" bordercolor="#FFFFFF">mW/mm<sup>2</sup></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">MKS</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">kg/s</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">RPM</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">kPa</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">K</td>
+                                    <td width="15%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">W/m<sup>2</sup>/K</td>
+                                    <td width="15%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">W/m<sup>2</sup></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="14%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">Mixed</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">lb/s</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">RPM</td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">lbf/in<sup>2</sup></td>
+                                    <td width="14%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">K</td>
+                                    <td width="15%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">W/m<sup>2</sup>/K</td>
+                                    <td width="15%" bgcolor="#FFFFFF" height="6" class="mediumText" bordercolor="#FFFFFF">W/m<sup>2</sup></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">Alt
+                                      Mixed</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">kg/s</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">Rad/s</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">kPa</td>
+                                    <td width="14%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">F</td>
+                                    <td width="15%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">thu/tf<sup>2</sup>/F</td>
+                                    <td width="15%" bgcolor="#ECF2F8" height="19" class="mediumText" bordercolor="#FFFFFF">Bthu/ft<sup>2</sup></td>
+                                  </tr>
+                                </table>
+
+<p class="mediumText">A listing of all calculated boundary condition values will
+be written to the .prt file, and a window opened displaying the contents of the file.</p>
+
+<p class="mediumText">The summary print file contents include results at every
+time point.</p>
+
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Check all
+        thermal boundary condition values are as expected at a key time-point e.g. steady state
+        max. conditions.</td>
+                                  </tr>
+                                </table>
+                                <p class="mediumText" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                                <hr size="1">
+                                <h6 class="largehead"><a name="processing">Process
+                                Thermal Model Results</a></h6>
+                                <p class="mediumText">Once an analysis model has
+                                been fully checked, the results may be
+                                processed.</p>
+                                <p class="mediumText">There are a number of
+                                facilities available via the <b>Results</b>, <b>Display</b>
+                                and <b>Graph Menu</b> commands to review the
+                                results:
+                                <ul>
+                                  <li>
+                                    <p class="mediumText"><a href="#thermal_model_results">Contour Plots</a>
+                                  <li>
+                                    <p class="mediumText"><a href="#get_result_values">Get Values</a>
+                                  <li>
+                                    <p class="mediumText"><a href="results_processing_2.htm#timeplots">Time Plots</a>
+                                  <li>
+                                    <p class="mediumText"><a href="results_processing_2.htm#defgraphs">User Defined Graphs</a></li>
+                                </ul>
+                                <p class="mediumText">We will now generate each
+                                of these plots in turn.</p>
+
+                                    <hr size="1">
+                                <h6 class="largehead"><a name="thermal_model_results">Contour
+                                Thermal Model Results</a></h6>
+    <p class="mediumText">To generate a contour plot of the analysis model results:</p>
+    <table border="0" width="136%" height="1" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="49%" height="41" valign="top"><p align="center" class="mediumText"><img src="images/2dtutor.sc03_structmesh_menubar.gif" align="left" width="287" height="126"></td>
+        <td width="87%" height="1" rowspan="2" valign="top">
+          <p class="mediumText"><img src="images/2dtutor.sc03_results_pulldown.gif" width="201" height="400"></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="49%" height="1" valign="top">
+                                <p>&nbsp;</p>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+        <tr>
+          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">Open the Results menu by selecting <b> Results</b> with the left mouse
+            button</td>
+        </tr>
+      </table>
+          <p align="left" class="mediumText">&nbsp;</p>
+        <p align="left" class="mediumText">&nbsp;</td>
+      </tr>
+    </table>
+                                <p class="mediumText" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">then select the <b> Contour Types
+                                      </b> command and the <b> Thermal Boundary Conditions
+                                      (TherBC)</b> panel:</td>
+                                  </tr>
+                                </table>
+    <p align="center" class="mediumText"><img src="images/3dtutor.contour_type_panel.gif" width="438" height="361"></p>
+                                <p class="mediumText">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select the Fluid HTC option then click
+                                      <b> OK</b> with the left mouse button</td>
+                                  </tr>
+                                </table>
+    <p align="left" class="mediumText">&nbsp;</p>
+    <table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="40%" valign="top">
+          <p class="mediumText">The calculated heat transfer coefficients for each
+        surface will then be displayed.</p>
+          <p class="mediumText">The heat transfer coefficients at the final
+        time point (t=3000 secs.) will be shown.</p>
+        </td>
+        <td width="60%"><blockquote>
+          <p class="mediumText"><img src="images/3dtutor59.gif" width="246" height="281"></p>
+        </blockquote>
+        </td>
+      </tr>
+    </table>
+    <p align="left" class="mediumText">To change the cycle time at which contours are
+    displayed:</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Open the Results
+                                      menu by selecting <b> Results </b>with the left mouse
+            button, then select the <b> Load Case Control</b> command and enter the
+            appropriate Ramp and Step numbers.</td>
+                                  </tr>
+                                </table>
+    <p class="mediumText">To change the type of result that is displayed:</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select the <b> Contour Type</b> command and enter the appropriate result
+                                      required then select the <b> Contour Types</b> command and the
+                                      <b> Temperature
+            (Temp)</b> panel</td>
+                                  </tr>
+                                </table>
+    <p align="center" class="mediumText"><img src="images/3dtutor.contour_type_panel2.gif" alt="3dtutor.contour_type_panel2.gif (8785 bytes)" width="433" height="357"></p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select the <b> TK Temperature (K)
+                                      </b> option then click <b>
+            OK </b> with the left mouse button</td>
+                                  </tr>
+                                </table>
+    <p align="left" class="mediumText">&nbsp;</p>
+    <table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+      <tr>
+        <td width="40%" valign="top">
+          <p class="mediumText">The calculated temperature distribution on
+        each surface will then be displayed.</p>
+          <p class="mediumText">The metal temperatures at the current time
+        point/load case (t=3000 secs) will be shown.</p>
+          <p class="mediumText">&nbsp;</p>
+        </td>
+        <td width="60%"><blockquote>
+          <p class="mediumText"><img src="images/3dtutor61.gif" width="191" height="243"></p>
+        </blockquote>
+        </td>
+      </tr>
+    </table>
+    <p class="mediumText">To change the style of contours that are used:</p>
+    <p align="left" class="mediumText">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select the <b> Contour Styles</b> command and enter the appropriate style.</td>
+                                  </tr>
+                                </table>
+    <p class="mediumText">To change the contour colours:</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <p class="mediumText">Select the <b> Contour Colours</b> command and enter the colours required.</td>
+                                  </tr>
+                                </table>
+    <p class="mediumText">&nbsp;</p>
+                                <hr size="1">
+                                <p class="largehead"><a name="get_result_values">Get
+                                result values</a></p>
+                                <p class="mediumText">The contour plots provide
+                                a qualitative understanding of the predicted
+                                temperature distribution of a component.
+                                However, contour plots should not be used to
+                                determine the absolute value at a point on the
+                                model.</p>
+                                <p class="mediumText">To determine the
+                                temperature (or any results type) at a specific
+                                point on the model:</p>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+        <tr>
+          <td width="100%" bgcolor="#D8F0EE">
+            <p class="mediumText">Open the <b>Results Menu</b>  by selecting <b>Results</b>
+            with the left mouse button then select the <b>Contour Types</b>
+            command. Select <b>Temp</b>  and then <b>TK - temperatures in
+            Kelvin</b>
+            <p class="mediumText">Open the <b>Results Menu</b> by selecting <b>Results</b>
+            with the left mouse button then select the <b>Get Values</b>
+            command.</td>
+        </tr>
+      </table>
+                                <p class="mediumText">The cursor will change to
+                                an arrow, which - when clicked over the
+                                contoured results - will give the values at the
+                                nearest mesh node.</p>
+                                <table border="0" width="100%" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+                                  <tr>
+                                    <td width="43%">
+
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE" valign="top">
+                            <p class="mediumText">Select a point on the model
+                            and note how the result is tabulated on the screen.</td>
+                        </tr>
+                      </table>
+
+                                    </td>
+                                    <td width="57%">
+                                      <blockquote>
+                                        <p align="center"><font face="Arial" size="3"><img align="left" src="../2d_tutorial/images/2dtutor.get_result_values.gif" width="169" height="55"></font></p>
+                                      </blockquote>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <p class="mediumText">Values can continue to be
+                                selected until <b>End</b> is selected with the right
+                                mouse button.</p>
+                                <p class="mediumText">To change the cycle time
+                                at which values are displayed:</p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Open the<b>  Results Menu </b>by
+                            selecting <b>Results</b> with the left mouse
+                            button, then select the <b>Load Case Control</b>
+                            command and enter the appropriate<b> Ramp</b> and <b>Step</b>
+                            numbers.</td>
+                        </tr>
+                      </table>
+
+                                <p class="mediumText">For more information about
+                                ramps and steps, follow <a href="/genthermal/best_practices/analysis_tools/model_production/general/tolerances.html#Time_Stepping_Accuracy">this
+                                link</a>.</p>
+                                <hr size="1">
+                                <p>&nbsp;</p>
+									<p align="left">Page Author: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+                                    Barnes<br>
+                                    </a>Page Version: 2.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->07/12/2006<!--webbot bot="Timestamp" endspan i-checksum="12542" -->
+                                </p>
+								</td>
+							</tr>
+						</table>
+						<div align="center">
+							<p align="center"><br>
+                            <span class="footlinks"><a class="footlinks" href="thermal_analysis.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="results_processing_2.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+  </TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/3d_tutorial_links.htm" TAG="BODY" startspan -->
+
+      <h2 align="left"><b>3D Tutorial Links</b></h2>
+
+      <UL>
+        <LI><a href="default.htm">Menu</a>
+        <LI><a href="introduction.htm">Introduction</a>
+        <LI><a href="geom_mesh.htm">Geometry &amp; Mesh</a>
+        <LI><a href="cycle_definitions.htm">Cycle
+          Definitions</a>
+        <LI><a href="../2d_tutorial/vw34.htm">VW34 (<i>optional)</i></a>
+        <LI><a href="boundary_conditions1.htm">Boundary
+          Conditions</a>
+        <LI><a href="model_controls.htm">Model Controls</a>
+        <LI><a href="thermal_analysis.htm">Thermal analysis</a>
+        <LI><a href="results_processing.htm">Results
+          Processing</a>
+        <LI><a href="mastery_test.htm">Mastery Test</a>
+      </UL>
+
+<!--webbot bot="Include" endspan i-checksum="919" -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" endspan i-checksum="58695" -->
+
+</body>
+
+</html>

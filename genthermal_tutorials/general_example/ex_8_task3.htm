@@ -1,0 +1,589 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>Exercise 8 - Absolute/Relative Total Temperature Analysis</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" endspan i-checksum="27619" -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability</a>
+      &gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; &nbsp;<a href="../default.htm">Training
+      </a>&gt; <a href="default.htm">General
+      Example Problems</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="ex_8_task2.htm">back to previous
+                            </a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="ex_8_task4.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="22422" -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+                      <h1>Exercise 8 - Task 3: Windage Heating in Labyrinth
+                      Seals</h1>
+                      <p class="mediumText">Labyrinth seals are used extensively
+                      in Gas Turbine Engines. The metal surface area is
+                      relatively large, and the clearances are small, so the
+                      work done on the air as it passes through the seal can be
+                      large.</p>
+                      <font FACE="Arial" SIZE="3">
+    <hr size="1">
+    </font>
+    </CENTER>
+                      <p class="largehead" align="left">Instructions</p>
+                      <p class="mediumText" align="left">As discussed in the
+                      Theory section, windage heating is the Rolls Royce term
+                      for the viscous heating that occurs as a result of shear
+                      forces in the fluid boundary layer.&nbsp;</p>
+                      <p class="mediumText" align="left">Labyrinth seals are
+                      very common in Gas Turbine engines. <i>Figure 8</i> below
+                      shows an example of some labyrinth seals on the HP turbine
+                      of the Trent 1000 engine. Click <a href="/fluid_systems/Diagrams/Trent%20900/T900StatAirflow%20non%20stat.jpg">here</a>
+                      to see the Trent 900 air system diagram and look for other
+                      locations in the engine where labyrinth seals are used.</p>
+                      <p class="mediumText" align="center"><img border="0" src="images/Ex8fig8.png" width="339" height="264"></p>
+                                <p class="mediumText" align="center"><i>Figure 8
+                                - Trent 1000 HP Turbine disc &amp; static
+                                structure</i></p>
+                                <p class="mediumText" align="left">A labyrinth
+                                seal consists of a number of fins with a small
+                                clearance to an abradable lining. Under certain
+                                engine conditions the fins may rub on the
+                                abradable lining. In order for the air to pass
+                                through the seal it has to navigate a circuitous
+                                path around each of the fins. As can be
+                                appreciated, this is a complex flow problem, so
+                                an empirical correlation is very useful in
+                                approximating the windage heating. This
+                                correlation is called LAB43231 and is used in
+                                the heat pickup field of a stream or a duct. It
+                                takes information about the flow through the
+                                seal, and the seal geometry to calculate the
+                                work done on the air, and thus the heat input to
+                                the air. It can also be used to calculate the
+                                change in swirl velocity through the seal. This
+                                functionality will be describe din more detail
+                                later on.</p>
+                                <p class="mediumText" align="left">The General
+                                Example model has been updated to include some
+                                geometry similar to that shown in <i>Figure 8</i>
+                                above. There are now 4 separate labyrinth seals
+                                between the HP turbine disc, and the static
+                                structure in front of it. <i>Figure 9&nbsp;</i>
+                                below shows these 4 seals:</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig9.png" width="418" height="297"></p>
+                                <p class="mediumText" align="center"><i>Figure 9
+                                - Labyrinth seals in General Example model</i></p>
+                                <p class="mediumText" align="left">This geometry
+                                is a simplified version of the Trent 100 design
+                                shown in <i>Figure 8</i>. To investigate the
+                                modelling of one of these seals, will will look
+                                at the inner seal on the disc.&nbsp;</p>
+                                <p class="mediumText" align="left">When we modelled
+                                the flow on the HP compressor group, we worked
+                                in the relative frame of reference. That is, we
+                                converted all of the inputs into the relative
+                                frame of reference, so that SC03 did not have to
+                                do any of the conversions itself. In the
+                                Turbines thermals group, it is convention to
+                                model the flow up the disc face in the Absolute
+                                frame of reference. This means that all of the
+                                inputs need to be in the Absolute frame of
+                                reference. This is fine for any flows on the
+                                static structure - they are already in the
+                                Absolute frame of reference. However, the flows
+                                on the rotating components are in the relative
+                                frame of reference, and need to be converted to
+                                Absolute temperatures.</p>
+                                <p class="mediumText" align="left">The turbines
+                                group also models the flow through a labyrinth
+                                seal using a combination of streams and ducts,
+                                with the assumption that the abradable lining is
+                                semi-permeable. The Duct boundary condition is
+                                applied to the metal surface on the rotating
+                                component, and the metal surface beneath the abradable
+                                lining on the static component 95% of the total
+                                mass flow through the seal is through the duct.
+                                The remaining 5% of the total mass flow is
+                                applied through a stream that flows over the
+                                outer surface of the abradable lining. This is
+                                shown for the first seal in <i>Figure 10 </i>below:</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig10.png" width="396" height="403"></p>
+                                <p class="mediumText" align="center"><i>Figure
+                                10 - Boundary conditions applied to first
+                                labyrinth seal</i></p>
+                                <p class="mediumText">The total flow through the
+                                first labyrinth seal is equal to the mass flow
+                                of stream 24 which flows long the HP shaft and
+                                up the turbine disc plus the mass flow coming
+                                down the static structure (stream 504). The mix
+                                of these two streams flows through the seal. In
+                                order to calculate the temperature of the flow
+                                into the seal, the MIX function is used. In
+                                simplistic terms, this gives a mass flow
+                                weighted average temperature of the two streams.
+                                To use the MIX function, both temperatures must
+                                be in the same frame of reference -
+                                unfortunately the flow from the static structure
+                                is in the absolute frame, whilst the flow up the
+                                turbine disc is in the relative frame.</p>
+                                <p class="mediumText">The ABS2REL functionality
+                                cannot be used inside the MIX function. Instead,
+                                the conversion from a relative to an absolute
+                                temperature is carried out using a dummy stream.
+                                Stream 824 has the same mass flow as stream 24,
+                                and the temperature field contains the REL2ABS
+                                function which converts the relative total
+                                temperature of stream 24 into an absolute total
+                                temperature. All other fields in the boundary
+                                condition definition panel are set to 0. As
+                                there is no heat pickup and no heat transfer,
+                                the stream exit temperature will be the same as
+                                the stream inlet temperature, which is the
+                                absolute total temperature at the exit of stream
+                                24. The exit temperature of stream 824 can now
+                                be referenced in the absolute frame of reference
+                                instead of the exit temperature of stream 24.</p>
+                                <p class="mediumText">The input panel for duct 1
+                                is shown below in <i>Figure 11</i>. Mass flow
+                                rates through a seal are usually defined by the
+                                Air Systems group and defined in the model
+                                either in the cycle definition, or in the user
+                                parameters as a scaling expression. In this case
+                                the mass flow rate through the seal is defined
+                                in the cycle definition as W2L101, and in line
+                                with the Turbines group convention, 0.95% of
+                                this mass flow goes through the duct. To ensure
+                                mass is conserved, the mass flow through the
+                                seal should be equal to the mass flow down the
+                                static structure plus the mass flow entrained up
+                                the turbine disc.</p>
+                                <p class="mediumText">The inlet temperature is
+                                defined using the MIX( ) function, where stream
+                                824 is a dummy stream that calculates the
+                                absolute temperature of stream 24 and stream 504
+                                is the flow down the static structure. Similar
+                                to the PWR( ) function used in voids, preceding
+                                the index number with a '-' tells SC03 to use
+                                the temperature from a duct in the MIX
+                                calculations.</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig11.png" width="577" height="430"></p>
+                                <p class="mediumText" align="center"><i>Figure
+                                11 - Duct 1 input panel</i></p>
+                                <p class="mediumText" align="left">The LAB43231
+                                correlation is used in the heat pickup field for
+                                side A of the duct. It is convention in the
+                                Thermals group to apply side A of a duct to the
+                                rotating component, and side B to the static
+                                structure. Note that there is no heat pickup on
+                                the static structure side of the duct. The
+                                LAB43231 correlation requires 7 input parameters
+                                to perform its calculations:</p>
+                                <p class="mediumText" align="center"><i>LAB43231(T<sub>abs
+                                in</sub>, <font face="Symbol">w</font><sub>rotor</sub>,
+                                <font face="Symbol">w</font><sub>stator</sub>,
+                                mass flow, inlet swirl velocity, area for heat
+                                pickup, geometry index)</i></p>
+                                <p class="mediumText" align="left">All of these
+                                inputs are fairly self explanatory apart from
+                                the area and the geometry index. The mass flow
+                                specified should be the total mass flow that is
+                                subject to the heat input. This should be the
+                                total flow through the seal, not just the 95%
+                                that flows through the duct. As can be seen from
+                                the panel, the heat pickup is required in mW/mm2.
+                                In order to calculate this SC03 needs the
+                                surface area over which the work is done. The
+                                area over which work is done is only that of the
+                                rotating component - side A of the duct. In SC03
+                                version 10 it is possible to reference the area
+                                of a boundary condition in much the same way as
+                                the temperature or pressure of a boundary
+                                condition is referenced. In this seal, the area
+                                required is that of side A of duct 1. The
+                                expression to reference this area is DA1a (D for
+                                duct, A for Area, 1a for side A of duct
+                                1).&nbsp;</p>
+                                <p class="mediumText" align="left">The
+                                correlation requires some information about the
+                                geometry of the seal to calculate the work done
+                                on the air as it passes through. In order to
+                                simplify the input process, this geometry
+                                information is contained in a separate panel
+                                which is then referenced by the LAB43231
+                                correlation. As this is the first time the
+                                correlation has been use din the model, the
+                                correlation references geometry panel 1. From
+                                SC03, the geometry input panel is referenced
+                                from the Thermals menu, then LAB43231. The
+                                geometry input panel for this seal is shown
+                                below in <i>Figure 12</i>:</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig12.png" width="586" height="560"></p>
+                                <p class="mediumText" align="center"><i>Figure
+                                12 - general example labyrinth seal 1 geometry
+                                input panel</i></p>
+                                <p class="mediumText" align="left">The geometry
+                                input panel has a number of check boxes, and a
+                                number of data fields. The check boxes are self
+                                explanatory, the number of fins per step is only
+                                used on a stepped seal like those shown in the
+                                Trent 1000 example in Figure 3. Rotor inlet
+                                diameter &amp; rotor exit diameter are easy to
+                                obtain using the Query Geometry tool
+                                (Model&gt;Query Geometry) and clicking on the
+                                inlet and exit of the seal.</p>
+                                <p class="mediumText" align="left">The radial
+                                clearance field refers to the seal running
+                                clearance. This is literally the size of the gap
+                                between the seal fin tips and the stator. In
+                                reality, this value varies through the engine
+                                cycle as the components undergo thermal
+                                expansion and the CF forces act on the rotating
+                                components, but the LAB43231 correlation
+                                requires a single value to be used. The value
+                                specified in this field should be consistent
+                                with the value used in the SPAN analysis (SPAN
+                                is a 1D flow analysis programme that calculates
+                                mass flows and pressures throughout the engine
+                                at a steady-state condition). For this tutorial,
+                                use a value of 0.140mm for all seals.</p>
+                                <p class="mediumText" align="left">Axial
+                                clearance is only required for a stepped seal.
+                                This is the axial clearance between the fin tips
+                                and the edge of the step. Fin pitch is the
+                                distance between the Fin tips (front of one fin
+                                tip to the front of the next fin tip). Fin tip
+                                thickness can again be found using the Query
+                                Geometry tool and zooming in on the end of a
+                                fin. Honeycomb cell size refers to the abradable
+                                lining, and should be left as the default unless
+                                otherwise specified, as should the mass flow
+                                factor, and the two moment factors. The geometry
+                                panel should be defined before the boundary
+                                condition is applied to the model, otherwise
+                                SC03 will reject the expressions referencing a
+                                geometry panel that does not exist.</p>
+                                <p class="mediumText" align="left">Going back to
+                                the duct input panel in <i>Figure 11</i> it is
+                                necessary to define the pressure through the
+                                seal. It is normal for this to be defined as the
+                                average of the pressure either side of seal. The
+                                heat transfer coefficient used is FRD - a
+                                turbulent free disc. In this case a factor of
+                                0.6 is applied to the correlation which is
+                                normally determined by matching the model to
+                                experimental data. There is an additional factor
+                                on the HTC for side B of 0.5. This is because
+                                side B of the duct is applied to an internal
+                                line. SC03 sees an internal line as having two
+                                sides, and calculates the area accordingly. When
+                                both domains on either side of the internal line
+                                are axi-symmetric, or as in this case, one
+                                domain is defined as having a thickness of 2<font face="Symbol">p</font>r,
+                                the area SC03 uses in its calculations is double
+                                the actual area, so applying a factor of 0.5 to
+                                the HTC corrects it. When one, or both, of the
+                                domains is defined as having a thickness less
+                                than 2<font face="Symbol">p</font>r it is
+                                necessary to calculate the area SC03 will use
+                                and the actual area over which heat transfer
+                                occurs to calculate the correction factor. This
+                                scenario commonly occurs when modelling flow
+                                through a hole. How to model flow through holes,
+                                and the method used to calculate the factors is
+                                the subject of an SC03 Best Practice that can be
+                                found on the Thermo-mechanics web. There are
+                                some specific heat transfer correlations for
+                                labyrinth seals (LABTHR, LABTHS, LABSTPR,
+                                LABSTPS) but these are not commonly used.</p>
+                                <p class="mediumText" align="left">The swirl
+                                velocity is defined in this case as SWIRL1. The
+                                SV43231 correlation can be used to calculate the
+                                swirl velocity at the exit of the labyrinth
+                                seal. This correlation uses exactly the same calculations
+                                as the LAB43231 correlation but outputs the
+                                swirl velocity instead of the heat pickup. It
+                                requires all of the input parameters as the
+                                LAB43231 correlation apart from the area. The
+                                user expression SWIRL1 is set up to vary the
+                                swirl velocity between the inlet and the exit of
+                                the seal. In SC03, the parametric length of any
+                                boundary condition is described by the variable
+                                'S'. This variable has a value of zero at the
+                                start of the boundary condition, and 1 at the
+                                exit of the boundary condition, and varies
+                                linearly between the two. The SWIRL1 expression
+                                is shown below:</p>
+                                <p class="mediumText" align="center"><i>SWIRL1 =
+                                SV24 +
+                                S*(SV43231(MIX(824,504),NH,0,W2L101,SV24,1)-SV24)</i></p>
+                                <p class="mediumText" align="left">This
+                                expression means that at the inlet to the duct,
+                                'S' is zero, so the swirl velocity is just SV24
+                                (the swirl velocity at the exit of stream 24)
+                                and at the exit of the duct when 'S' = 1 the
+                                swirl velocity is equal to the output of the
+                                SV43231 expression. An easy way to see the full
+                                expression in SC03 is to click in the Swirl
+                                Velocity field of the input panel (or Query BC's
+                                panel) and press 'Ctrl + E' on the keyboard.
+                                This will expand any expression in the field and
+                                display the results in the Monitor window. This
+                                will work in any panel field - try it in the
+                                Pressure field to see the scaling expression for
+                                P2C10.</p>
+                                <p class="mediumText" align="left">Stream 25
+                                flows over the outer surface of the abradable
+                                liner with 5% of the total mass flow. The input
+                                panel for stream 25 is shown below in <i>Figure
+                                13</i>. The inlet temperature, pressure and the
+                                heat transfer coefficient are exactly the same
+                                as for the duct. There is no heat pickup or
+                                swirl velocity on the stream.</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig13.png" width="550" height="326"></p>
+<CENTER>
+                            <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5" height="176">
+                              <tr>
+                                <td width="100%" bgcolor="#D8F0EE" height="154">
+                                  <p class="mediumtext">Look at the input panels
+                                  for the duct and stream on seal 2 and seal 3
+                                  and satisfy yourself that the method used is
+                                  the same as that used on the first labyrinth
+                                  seal.
+                            </p>
+                                  <p class="mediumtext">Use this method to
+                                  define the boundary conditions for the final
+                                  labyrinth seal (use duct 9 and stream 50 to
+                                  maintain interdependencies for subsequent
+                                  boundary conditions)
+                            </p>
+                                  <ul>
+                                    <li>
+                                      <p class="mediumText">Use the Query
+                                      Geometry tool to extract the data required
+                                      for the seal geometry panel</li>
+                                    <li>
+                                      <p class="mediumText">Mass flow through
+                                      the seal is defined as W2L104</li>
+                                    <li>
+                                      <p class="mediumText">Pressure upstream of
+                                      the seal is defined in the user parameters
+                                      as P1C12, and the downstream pressure is
+                                      P1C06</li>
+                                    <li>
+                                      <p class="mediumText">Select an
+                                      appropriate heat transfer correlation&nbsp;</li>
+                                    <li>
+                                      <p class="mediumText">Define user
+                                      parameter SWIRL4 to calculate the swirl
+                                      velocity through the seal</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </table>
+    </CENTER>
+                          <p class="mediumText" align="left">Click <a href="ex_8_solutions.htm#Task3solution" name="Task3problem">here</a>
+                          to see the model solutions for Task 3
+
+<CENTER>
+
+                                    <hr size="1">
+    </CENTER>
+									<p align="left">&nbsp;</p>
+									<p align="left">Page Author (s): <a href="mailto:benjamin.saunders@rolls-royce.com">Ben
+                                    Saunders<br>
+                                    </a>Page Version: 1.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->17/07/2006<!--webbot bot="Timestamp" endspan i-checksum="12615" -->
+                      </p>
+								</td>
+							</tr>
+						</table>
+						<div align="center">
+							<p><br>
+                            <span class="footlinks"><a class="footlinks" href="ex_8_task2.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="ex_8_task4.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+  </TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/General_example_links.htm" TAG="BODY" startspan
+        -->
+
+      <h2 align="left"><b>General Example Links</b></h2>
+
+      <ul>
+        <li><a href="default.htm"> Home</a></li>
+        <li><a href="introduction_to_the_general_exam.htm">Introduction</a></li>
+        <li><a href="model_details.htm">Model Details</a></li>
+        <li><a href="ex_1.htm">Exercise 1</a></li>
+        <li><a href="ex_2.htm">Exercise 2</a></li>
+        <li><a href="ex_3.htm">Exercise 3</a></li>
+        <li><a href="ex_4.htm">Exercise 4</a></li>
+        <li><a href="ex_5.htm">Exercise 5</a></li>
+        <li><a href="ex_6_1.htm">Exercise
+          6</a></li>
+        <li><a href="ex7a_1.htm">Exercise 7</a></li>
+        <li><a href="ex_8.htm">Exercise 8</a></li>
+      </ul>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="46435"
+        -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" endspan i-checksum="58695" -->
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+fid=fopen('flowout','r');
+dum=fread(fid,1,'int32');
+nblocks=fread(fid,1,'int32');
+dum=fread(fid,1,'int32');
+dum=fread(fid,1,'int32');
+cp=fread(fid,1,'real*4');
+ga=fread(fid,1,'real*4');
+dum=fread(fid,1,'int32');
+for nblck=1:nblocks,
+    dum=fread(fid,1,'int32');
+    block(nblck).im=fread(fid,1,'int32');
+    block(nblck).jm=fread(fid,1,'int32');
+    block(nblck).km=fread(fid,1,'int32');
+    dum=fread(fid,1,'int32');
+    im=block(nblck).im;
+    jm=block(nblck).jm;
+    km=block(nblck).km;
+    %
+    block(nblck).ro=zeros(im,jm,km);
+    block(nblck).rovx=zeros(im,jm,km);
+    block(nblck).rovr=zeros(im,jm,km);
+    block(nblck).rorvt=zeros(im,jm,km);
+    block(nblck).roe=zeros(im,jm,km);
+    block(nblck).spare=zeros(im,jm,km);
+    %   
+    for i=1:im,
+        for j=1:jm,
+            %
+            dum=fread(fid,1,'int32');
+            block(nblck).ro(i,j,:)=fread(fid,km,'real*4');
+            dum=fread(fid,1,'int32');
+            %
+            dum=fread(fid,1,'int32');
+            block(nblck).rovx(i,j,:)=fread(fid,km,'real*4');
+            dum=fread(fid,1,'int32');
+            %
+            dum=fread(fid,1,'int32');
+            block(nblck).rovr(i,j,:)=fread(fid,km,'real*4');
+            dum=fread(fid,1,'int32');
+            %
+            dum=fread(fid,1,'int32');
+            block(nblck).rorvt(i,j,:)=fread(fid,km,'real*4');
+            dum=fread(fid,1,'int32');
+            %
+            dum=fread(fid,1,'int32');
+            block(nblck).roe(i,j,:)=fread(fid,km,'real*4');
+            dum=fread(fid,1,'int32');
+            %
+            dum=fread(fid,1,'int32');
+            block(nblck).spare(i,j,:)=fread(fid,km,'real*4');
+            dum=fread(fid,1,'int32');
+            %
+        end
+    end    
+    dum=fread(fid,1,'int32');
+    block(nblck).wrot=fread(fid,1,'real*4');
+    block(nblck).timtot=fread(fid,1,'real*4');
+    dum=fread(fid,1,'int32');
+end
+fclose(fid);
+

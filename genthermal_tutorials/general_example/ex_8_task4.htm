@@ -1,0 +1,433 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>Exercise 8 - Absolute/Relative Total Temperature Analysis</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" i-checksum="27619" endspan -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability</a>
+      &gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; &nbsp;<a href="../default.htm">Training
+      </a>&gt; <a href="default.htm">General
+      Example Problems</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="ex_8_task3.htm">back to previous
+                            </a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="../default.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" i-checksum="22422" endspan -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+                      <h1>Exercise 8 - Task 4: Windage Heating in 'Rectangular'
+                      Cavities</h1>
+                      <p class="mediumText">Similar to the labyrinth seal,
+                      viscous forces in the boundary conditions of rectangular
+                      cavities can result in significant heat inputs to the
+                      flow. The RECWND correlation works in a similar way to the
+                      LAB43231 correlation to calculate the power input to the
+                      air as a result of these viscous forces.</p>
+                      <font FACE="Arial" SIZE="3">
+    <hr size="1">
+    </font>
+    </CENTER>
+                      <p class="largehead" align="left">Instructions</p>
+                      <p class="mediumText" align="left">The first thing to
+                      point out is that although the correlation is for
+                      rectangular cavities, there are very few cavities in a gas
+                      turbine engine that are actually rectangular! As long as
+                      the cavity has two sides, a top and a bottom then the
+                      RECWND correlation can be used. If we look again at the
+                      Trent 1000 HP turbine/fixed structure, there are a couple
+                      of places where the RECWND correlation can be used
+                      (highlighted red):</p>
+                      <p class="mediumText" align="center"><img border="0" src="images/Ex8fig14.png" width="366" height="300"></p>
+                                <p class="mediumText" align="center"><i>Figure
+                                14 - Rectangular cavities between Trent 1000 HP
+                                turbine and static structure</i></p>
+                                <p class="mediumText" align="left">In the
+                                general example model, there are a couple of
+                                cavities that are very similar to these. The
+                                first one is modelled as duct 2, and takes its
+                                inputs from the first labyrinth seal - duct 1
+                                and stream 25:</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig15.png" width="438" height="485"></p>
+                                <p class="mediumText" align="center"><i>Figure
+                                15 - Rectangular cavities in General Example
+                                model</i></p>
+                                <p class="mediumText" align="left">The input
+                                panel for duct 2 is shown below in <i>Figure 16</i>.
+                                This looks very similar to the input panel for
+                                the labyrinth seal. The mass flow into the duct
+                                is equal to the total mass flow through the
+                                labyrinth seal, W2L101 (this could also be
+                                expressed as SM25 + DM1). The inlet temperature
+                                is simply uses the MIX( ) function to combine
+                                the flow from stream 25 with the flow from duct
+                                1. Both of these temperatures are in the
+                                absolute frame of reference, so they can be used
+                                directly in the MIX( ) function.</p>
+                                <p class="mediumText" align="center"><img border="0" src="images/Ex8fig16.png" width="577" height="430"></p>
+                                <p class="mediumText" align="center"><i>Figure
+                                16 - Duct 2 input panel</i></p>
+                                <p class="mediumText" align="left">As with the
+                                labyrinth seal, convention puts duct side A on
+                                the rotating component, and side B on the static
+                                component. The RECWND correlation is used in the
+                                Heat Pickup field for side A of the duct, and it
+                                requires 9 input parameters to perform its
+                                calculations:</p>
+                                <p class="mediumText" align="center"><i>RECWND(T<sub>abs
+                                in</sub>, <span style="font-family:Symbol">w</span><sub>disc1,
+                                </sub><span style="font-family:Symbol">w</span><sub>disc2</sub>,
+                                <span style="font-family:Symbol">w</span><sub><span style="mso-bidi-font-family:
+Tahoma">outer</span>, </sub><span style="font-family:Symbol">w</span><sub>inner</sub>,
+                                mass flow, inlet swirl velocity, Area, Geometry
+                                index)</i></p>
+                                <p class="mediumText" align="left">The entire
+                                expression from the heat pickup field above is
+                                shown below:</p>
+                                <p class="mediumText" align="center"><i>RECWND(MIX(25,-1),NH,0,NH,NH,W2L101,DV1,DA2a,1)</i></p>
+                                <p class="mediumText" align="left">These are
+                                similar to the parameters required for the
+                                LAB43231 correlation, except the rotational
+                                speeds of the top and bottom of the cavity are
+                                required (<font face="Symbol">w</font><sub>outer</sub>
+                                &amp; <font face="Symbol">w</font><sub>inner</sub>).
+                                It does not matter which side of the rectangle
+                                is specified as disc 1 and which is disc 2, as
+                                long as the convention is carried over into the
+                                geometry input panel. As with the labyrinth seal
+                                correlation, the geometry input panel can be
+                                found in SC03 on the Thermals menu, then RECWND.
+                                The geometry panel for duct 2 is shown below in <i>Figure
+                                17</i>:</p>
+                                <p class="mediumText" align="center"><i><o:p>
+                                </o:p>
+                                <img border="0" src="images/Ex8fig17.png" width="586" height="508"></i></p>
+                                <p class="mediumText" align="center"><i>&nbsp;Figure
+                                17 - Duct 2 RECWND geometry input panel</i></p>
+                                <p class="mediumText" align="left">The top four
+                                boxes are easy to define using the Query
+                                Geometry tool to extract the required data from
+                                the model. The roughness and moment factor
+                                fields should be left as 0 and 1 respectively
+                                unless otherwise specified in the design scheme.
+                                The inner and outer radii of integration tell
+                                SC03 how much of the cavity to calculate the
+                                heat input for. When the cavity is of a fairly
+                                constant width, and there are no inputs to or
+                                outputs from the cavity along the boundary
+                                condition length, then these values should be
+                                equal to the inner and outer shroud radii. The
+                                cavity width should be an average width of the
+                                entire cavity.</p>
+                                <p class="mediumText" align="left">However, if
+                                the width of the cavity changes by a large
+                                amount, or there is an additional input to the
+                                cavity part way up the cavity, or the heat
+                                transfer coefficient changes along the cavity,
+                                then the radii of integration will not
+                                necessarily be equal to the inner and outer
+                                shroud radii. For example, consider a cavity
+                                with an inner radius of 100mm and an outer
+                                radius of 200mm with a constant width of 25mm.
+                                Halfway up the cavity&nbsp; i.e. at a radius of
+                                150mm, there is a stream flowing into the
+                                cavity. This would be modelled as two separate
+                                ducts - one going from the cavity inlet up to
+                                150mm, and another from 150mm to 200mm with an
+                                additional mass flow and power input. The size
+                                of the cavity has not changed - the inner radius
+                                is still 100mm and the outer radius 200mm, but
+                                the first duct would have an inner radius of
+                                integration of 100mm and an outer radius of
+                                integration of 150mm. The second duct would have
+                                an inner radius of integration of 150mm and an
+                                outer radius of 200mm.</p>
+                                <p class="mediumText" align="left">The swirl
+                                velocity field contains a user expression
+                                similar to the labyrinth seal that varies the
+                                swirl velocity linearly through the cavity. As
+                                with the LAB43231 correlation, there is a separate
+                                correlation for calculating the swirl velocity
+                                in a rectangular cavity - RECSV. As with
+                                SV43231, RECSV requires all of the same input parameters
+                                as RECWND apart from the area.</p>
+                                <p class="mediumText" align="left">There is an
+                                issue with the RECWND and RECSV correlations
+                                where SC03 will fail to run if the velocities of
+                                both discs are zero at any point in the cycle.
+                                This usually occurs at t=0s. this can be fixed
+                                by editing the cycle definition so that the
+                                velocities (NH, NI, and NL) are set to a small
+                                value at t=0 i.e. 1rad/s.</p>
+<CENTER>
+                            <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5" height="176">
+                              <tr>
+                                <td width="100%" bgcolor="#D8F0EE" height="154">
+                                  <p class="mediumtext">Use the method described
+                                  above to apply the boundary conditions to the
+                                  second rotor/stator cavity including windage
+                                  heating calculated using the RECWND
+                                  correlation (define boundary condition as duct
+                                  4 to maintain interdependencies of subsequent
+                                  boundary conditions)
+                            </p>
+                                  <ul>
+                                    <li>
+                                      <p class="mediumText">Use the Query
+                                      Geometry tool to extract the data required
+                                      for the RECWND geometry panel</li>
+                                    <li>
+                                      <p class="mediumText">Mass flow into the
+                                      cavity is equal to the total mass flow
+                                      through seal 2</li>
+                                    <li>
+                                      <p class="mediumText">The pressure in the
+                                      cavity is equal to P2C11</li>
+                                    <li>
+                                      <p class="mediumText">Select an
+                                      appropriate heat transfer correlation</li>
+                                    <li>
+                                      <p class="mediumText">Define RECSWIRL2
+                                      user parameter using the RECSV correlation</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </table>
+    </CENTER>
+                          <p class="mediumText" align="left">Click <a href="ex_8_solutions.htm#Task4solution" name="Task4problem">here</a>
+                          to see the model solutions for Task 4
+
+                                    <hr size="1">
+									<h1 class="largehead">Running the SC03 model</h1>
+                          <p class="mediumText" align="left">Once all of the
+                          four tasks have been completed, it should be possible
+                          to run the model. Solutions for all of the tasks are
+                          given in the Appendix to check your model against. It
+                          is not essential that all of the data is the same as
+                          the solutions. For example, scaling factors on heat
+                          transfer coefficients are a matter of judgement in
+                          this example. As mentioned previously, these would be
+                          determined by matching the model to test data. Also,
+                          some of the geometry data required by the LAB43231 and
+                          RECWND correlations again comes down to judgement. As
+                          long as the values used are similar then the model
+                          results should be largely the same. Figure 20 below
+                          shows a contour plot of metal temperature in K at the
+                          end of the high power condition (t=4000s).
+                          <p class="mediumText" align="center"><img border="0" src="images/Ex8complete.png" width="641" height="350">
+                          <p class="mediumText" align="left">If there is time,
+                          try varying some of the swirl velocities, either by
+                          changing the swirl ratio used in the correlations or
+                          in the Swirl velocity field.
+                          <p class="mediumText" align="left"><i>Note:<br>
+                          When SC03 tries to write out the Summary File after a
+                          run, it will return an error relating to the SWIRL1
+                          user parameter. This is not an error in the model, but
+                          a problem with SC03 version 10E0 trying to put a
+                          single value into the summary file for a parameter
+                          that varies with time.</i>
+                          <p class="mediumText" align="left">&nbsp;
+<CENTER>
+
+                                    <hr size="1">
+    </CENTER>
+									<p align="left">&nbsp;</p>
+									<p align="left">Page Author (s): <a href="mailto:benjamin.saunders@rolls-royce.com">Ben
+                                    Saunders<br>
+                                    </a>Page Version: 1.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->24/07/2006<!--webbot bot="Timestamp" i-checksum="12610" endspan -->
+                      </p>
+								</td>
+							</tr>
+						</table>
+						<div align="center">
+							<p><br>
+                            <span class="footlinks"><a class="footlinks" href="ex_8_task3.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="../default.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+  </TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/General_example_links.htm" TAG="BODY" startspan
+        -->
+
+      <h2 align="left"><b>General Example Links</b></h2>
+
+      <ul>
+        <li><a href="default.htm"> Home</a></li>
+        <li><a href="introduction_to_the_general_exam.htm">Introduction</a></li>
+        <li><a href="model_details.htm">Model Details</a></li>
+        <li><a href="ex_1.htm">Exercise 1</a></li>
+        <li><a href="ex_2.htm">Exercise 2</a></li>
+        <li><a href="ex_3.htm">Exercise 3</a></li>
+        <li><a href="ex_4.htm">Exercise 4</a></li>
+        <li><a href="ex_5.htm">Exercise 5</a></li>
+        <li><a href="ex_6_1.htm">Exercise
+          6</a></li>
+        <li><a href="ex7a_1.htm">Exercise 7</a></li>
+        <li><a href="ex_8.htm">Exercise 8</a></li>
+      </ul>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" i-checksum="46435" endspan -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" i-checksum="58695" endspan -->
+
+</body>
+
+</html>

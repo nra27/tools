@@ -1,0 +1,406 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>Exercise 5 - Thermal Matching</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" endspan i-checksum="27619" -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability</a>
+      &gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; <a href="../default.htm">Training</a>
+      &gt; <a href="default.htm">General Example Problems</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="ex_4.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="ex_6_1.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="22422" -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+                      <h1>Exercise 5 - Thermal Matching</h1>
+                      <p class="mediumText">The complexity of convective heat transfer problems in
+        gas turbine engines means that purely numerical solutions are not yet practicable. It is
+        therefore necessary to validate temperature predictions against engine test data</p>
+                      <p class="mediumText">Assume now that an engine test has just been
+        completed. The test data has been stored on <a href="/genthermal/best_practices/analysis_tools/input_processing/alice/default.htm">ALICE</a>
+        turned into .meas data using <a href="/genthermal/best_practices/analysis_tools/input_processing/vw34.htm">VW34</a>.</p>
+                      <ul>
+                        <li>
+                          <p class="mediumText">The measured data will already be in the original model as
+            graphical data items.</li>
+                      </ul>
+                      <hr size="1">
+    <p class="largehead">Exercise Objectives</p>
+    <p class="mediumText">To calibrate the finite element thermal model against
+        measured engine test data, by changing the heat transfer coefficients in the thermal
+        boundary conditions until an acceptable accuracy is reached.</p>
+    <p class="mediumText">The standard accuracies used are as follows</p>
+      <table cellPadding="6" width="50%" border="0" bgcolor="#FFFFFF">
+        <tbody>
+          <tr>
+            <td width="33%" bgColor="#336699" align="center">
+              <p align="center"><b><font color="#ffffff" size="2">Type of
+                      measurement&nbsp;</font></b></p>
+            </td>
+            <td width="33%" bgColor="#336699" align="center"><b><font color="#ffffff" size="2">Accuracy required</font></b></td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">Transient&nbsp;</td>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">±15K</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">Steady
+                      state&nbsp;&nbsp;</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">±5K&nbsp;&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </CENTER><p class="mediumText" align="left">However, this example will give a match with an
+          accuracy of ±1°K.</p>
+                                <hr size="1">
+                                <p class="largehead">Problem
+                                </p>
+                                <p class="mediumText" align="left">Given the basic model
+                                <b><i>
+                                originally</i></b>
+        picked up at the start of exercise 1 (example.pm), compare the results at the following
+        positions with measured data (GRP1 to GRP7) then modify relevant boundary
+        conditions to achieve an acceptable match (±1K):</p>
+                      <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <table cellPadding="6" width="50%" border="0" bgcolor="#FFFFFF">
+        <tbody>
+          <tr>
+            <td width="33%" bgColor="#336699" align="center">
+              <p><b><font color="#ffffff" size="2">Position</font></b></p>
+            </td>
+            <td width="33%" bgColor="#336699" align="center"><b><font color="#ffffff" size="2">X</font></b></td>
+            <td width="33%" bgColor="#336699" align="center"><b><font color="#ffffff" size="2">Y</font></b></td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">1</td>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">171.999&nbsp;</td>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">250.202</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">2</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">167.234</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">191.728</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">3</td>
+            <td vAlign="top" width="33%" bgColor="#ECF2F8" class="mediumText" align="center">123.999</td>
+            <td vAlign="top" width="33%" bgColor="#ECF2F8" class="mediumText" align="center">80.110</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">4</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">183.931</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">60.000</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">5</td>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">243.999</td>
+            <td vAlign="top" width="33%" bgColor="#ecf2f8" class="mediumText" align="center">78.520</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">6</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">196.591</td>
+            <td vAlign="top" width="33%" bgColor="#FFFFFF" class="mediumText" align="center">214.624</td>
+          </tr>
+          <tr>
+            <td vAlign="top" width="33%" bgColor="#ECF2F8" class="mediumText" align="center">7</td>
+            <td vAlign="top" width="33%" bgColor="#ECF2F8" class="mediumText" align="center">184.885</td>
+            <td vAlign="top" width="33%" bgColor="#ECF2F8" class="mediumText" align="center">279.919</td>
+          </tr>
+        </tbody>
+      </table>
+                                <CENTER>
+                                <p class="mediumText" style="word-spacing: 0; margin: 0" align="left">&nbsp;</p>
+                                <hr size="1">
+    </CENTER>
+    <p class="largehead" align="left">Instructions</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <ol>
+                                        <li>
+                                          <p class="mediumText">&nbsp;Put reference points on the model at the co-ordinates specified
+        above.</li>
+                                      </ol>
+                                    </td>
+                                  </tr>
+                                </table>
+                                    <p class="mediumText" style="margin-bottom: 0">The geometry should be broken at the
+              coordinates above (if not already done so), chained, meshed, and
+              then use 'Snap to Nearest Node' to apply the reference points at
+              the appropriate coordinates
+                                    <p class="mediumText" style="margin-bottom: 0">Click
+                                    <a href="ex_5_help.htm#Location of reference points">here</a> to get help with reference
+            points
+                                <p class="mediumText" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <ol start="2">
+                                        <li>
+                                          <p class="mediumText">Create difference plots to show difference between
+        predicted and measured data (convention is predicted-measured)</li>
+                                      </ol>
+                                    </td>
+                                  </tr>
+                                </table>
+                                    <p class="mediumText" style="margin-bottom: 0">Click <a href="/genthermal/best_practices/analysis_tools/model_production/general/key_values.htm">here</a>
+            to learn about keyvalues
+                                    <p class="mediumText" style="margin-bottom: 0">Click <a href="/genthermal/best_practices/analysis_tools/output_processing/graphs/quickgraph.htm">here</a>
+            to learn how to plot graphs quickly
+                                    <p class="mediumText" style="margin-bottom: 0">Click
+                                    <a href="ex_5_help.htm#Graph Definition">here</a>
+            for help setting up the graph definition file
+                                <p class="mediumText" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <ol start="3">
+                                        <li>
+                                          <p class="mediumText">Use engineering judgement to determine how to vary the boundary
+        conditions to bring the difference between the measured and the predicted data down to
+        within ±5K at steady state conditions and ±15K for transient conditions.</li>
+                                      </ol>
+                                    </td>
+                                  </tr>
+                                </table>
+                                    <p class="mediumText" style="margin-bottom: 0">Click
+                                    <a href="ex_5_help.htm#Change the boundary conditions">here</a> for help
+            to decide how/why to vary the boundary conditions
+                                    <p class="mediumText" style="margin-bottom: 0">Click <a href="/genthermal/best_practices/temperature/validation/matching.htm">here</a> for read
+            the Thermal Matching validation notes
+                                <p class="mediumText" style="margin-bottom: 0">As this is a staged example, the difference plots can show a 0K
+        difference</p>
+                                <p class="mediumText" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                                <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                                  <tr>
+                                    <td width="100%" bgcolor="#D8F0EE">
+                                      <ol start="4">
+                                        <li>
+                                          <p class="mediumText">When the difference plots give an accuracy of&nbsp; ±1K, use the
+          plugin <a href="/genthermal/best_practices/plugins/sc77/bc_compare.htm">SC77
+          (BC-Compare)</a> to check how the boundary
+        conditions have changed.</li>
+                                      </ol>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <p class="mediumText" style="margin-bottom: 0">BC Compare is a function which compares the thermal boundary conditions
+        from two separate models with one another and prints out any differences into the output
+        window, a named .prt file and a text editor window.</p>
+                                    <p class="mediumText" style="margin-bottom: 0">Click
+                                    <a href="ex_5_results.htm#Original difference plots">here</a> to see plot of
+        original difference plots (original model)
+                                    <p class="mediumText" style="margin-bottom: 0">Click
+                                    <a href="ex_5_results.htm#Final difference plots">here</a> to see plot of
+        possible difference plots (answers)
+                                <CENTER>
+                                <hr size="1">
+                                </center>
+    <p class="largehead" align="left">Results</p>
+    <p class="mediumText" align="left">Please contact Anja Colley (tel: 45563) for the definitive answers.</p>
+                                <CENTER>
+
+                                    <hr size="1">
+                                </center>
+									<p align="left">Page Author (s): <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+                                    Barnes<br>
+                                    </a>Page Version: 2.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->23/01/2006<!--webbot bot="Timestamp" endspan i-checksum="12512" -->
+                      </p>
+								</td>
+							</tr>
+						</table>
+						<div align="center">
+							<p><br>
+                            <span class="footlinks"><a class="footlinks" href="ex_4.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="ex_6_1.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+  </TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/General_example_links.htm" TAG="BODY" startspan
+        -->
+
+      <h2 align="left"><b>General Example Links</b></h2>
+
+      <ul>
+        <li><a href="default.htm"> Home</a></li>
+        <li><a href="introduction_to_the_general_exam.htm">Introduction</a></li>
+        <li><a href="model_details.htm">Model Details</a></li>
+        <li><a href="ex_1.htm">Exercise 1</a></li>
+        <li><a href="ex_2.htm">Exercise 2</a></li>
+        <li><a href="ex_3.htm">Exercise 3</a></li>
+        <li><a href="ex_4.htm">Exercise 4</a></li>
+        <li><a href="ex_5.htm">Exercise 5</a></li>
+        <li><a href="ex_6_1.htm">Exercise
+          6</a></li>
+        <li><a href="ex7a_1.htm">Exercise 7</a></li>
+        <li><a href="ex_8.htm">Exercise 8</a></li>
+      </ul>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="46435"
+        -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" endspan i-checksum="58695" -->
+
+</body>
+
+</html>

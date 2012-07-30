@@ -1,0 +1,315 @@
+#!/bin/csh -f
+#
+# Version 1 - new script - C. Barnes - 9 june 99
+# Version 2 - script modified to prompt for default suggestion - P. Johnson - dec 99
+# Version 3 - script modified to work for multi model optimisation - P. Johnson - dec 99
+#
+# invoke script by typing    make_auto.script   in a unix shell
+#
+# Echo to the screen the current names of user parameter (.usp) files and ask for input file
+# the input file consists of 3 columns separated by spaces
+# The same usp file is to be used for all sc03 databases
+# column 1 - factor name (e.g. facsh26) 
+# column 2 - equals sign (i.e. =) 
+# column 3 - factor e.g. (1.3) 
+#
+echo ""                                   
+echo "USER PARAMETER (.usp) FILES"               
+echo "---------------------------"               
+/bin/ls -1 *.usp    
+set defusp = `/bin/ls -t1 *.usp | grep -v "sc03_input.usp" | awk ' NR == 1 {print}'`
+echo ""                                   
+echo -n "Enter the name of the user parameter (.usp) file <${defusp}>:"
+set ans=$<
+if($ans != "") then
+set input_file = $ans
+else
+set input_file = $defusp
+endif
+#
+# make copy of the usp file to be used by isight
+cp $input_file sc03_input.usp
+echo ""
+echo "** sc03_input.usp has been produced **"
+#
+# make input_fdc file for isight input parsing
+awk -f ~u408651/bin9/sc03/make_input_fdc.awk $input_file > isight_input.fdc
+echo ""
+echo "** isight_input.fdc has been produced **"
+#
+# Echo to the screen the current names of text files and ask for output file
+# this consists of one column with names of the error (difference) plots defined in sc03
+# note that the gr prefix is not required
+# The same txt file is to be used for all sc03 databases
+#
+echo ""  
+echo "OUTPUT (.txt) FILES"               
+echo "-------------------"               
+/bin/ls -1 *.txt    
+set deftxt = `/bin/ls -t1 *.txt| awk ' NR == 1 {print}'`
+echo ""  
+echo -n "Enter the name of the output file <${deftxt}>:"
+set ans=$<
+if($ans != "") then
+set output_file = $ans
+else
+set output_file = $deftxt
+endif
+#
+# Echo to the screen the current names of pm files and ask for pm file
+# Count number of database files in directory (use this as the default)
+# Ask for number of databases to be optimised
+# request name of all sc03 databases (pm file)
+#
+echo ""
+echo "DATABASE (.pm) FILES"
+echo "--------------------"
+/bin/ls -1 *.pm
+set numpm = `/bin/ls -1 *.pm| grep -c pm`
+
+loop:
+echo ""
+echo -n "Enter the number of SC03 pm files required <${numpm}>:"
+set ans=$<
+if($ans != "") set numpm = $ans
+
+set fl=0
+if ($numpm >= "10") then
+	echo "to many pm files - the limit is 9"
+	set fl=1
+endif
+if ($fl == 1) goto loop
+
+
+# if only one database required set onepm flag
+set onepm = 0
+if ($numpm == "1") set onepm = 1
+
+
+set i=1
+set sc03_pm_string = ""
+set pmfiles = `/bin/ls -1 *.pm`
+while ( $i <= $numpm )
+echo ""
+set defpm = `echo $pmfiles | cut -d" " -f${i}`
+echo -n "Enter the name of SC03 pm file number ${i} <${defpm}>:"
+set ans=$<
+if($ans != "") then
+set sc03_pm_string = "$sc03_pm_string $ans"
+else
+set sc03_pm_string = "$sc03_pm_string $defpm"
+endif
+@ i++
+end
+
+set mem = 60
+echo ""
+echo -n "Enter the amount of memory (Mbytes) to be reserved for SC03 <${mem}>:"
+set ans=$<
+if ($ans != "") set mem = $ans
+
+
+
+
+echo ""
+# decide whether to make model directories and copy databases or not
+if ($onepm == "0") then
+	#
+	# make MODEL directories
+	#
+	set i=1
+	foreach pmfile ($sc03_pm_string)
+	if (! -e MODEL${i}) then
+	echo "** making MODEL${i} directory **"
+	mkdir MODEL${i}
+	else
+	echo "** MODEL${i} directory already exists **"
+	endif
+	@ i++
+	end
+	#
+	# copying pm files to MODEL directories
+	#
+	set i=1
+	foreach pmfile ($sc03_pm_string)
+	cp $pmfile MODEL${i}
+	@ i++
+	end
+endif
+#
+# make output_fdc file for isight output parsing
+if (-e isight_output.fdc) rm isight_output.fdc
+
+
+if ($onepm == "1") then
+	foreach oputvar (`cat $output_file`)
+	echo "read GR${oputvar}" >> isight_output.fdc
+	echo 'provide $GR'${oputvar} >> isight_output.fdc
+	echo 'moveto $Line_Start' >> isight_output.fdc
+	echo "moveto line + 1" >> isight_output.fdc
+	end
+else
+	foreach oputvar (`cat $output_file`)
+	set i=1
+	foreach pmfile ($sc03_pm_string)
+	echo "read GR${oputvar}${i}" >> isight_output.fdc
+	echo 'provide $GR'${oputvar}${i} >> isight_output.fdc
+	echo 'moveto $Line_Start' >> isight_output.fdc
+	echo "moveto line + 1" >> isight_output.fdc
+	@ i++
+	end
+	end
+endif
+
+
+
+echo ""
+echo "** isight_output.fdc has been produced **"
+#
+# make template output file
+if (-e sc03_output.item) rm sc03_output.item
+set i=1
+foreach oputvar (`cat $output_file`)
+foreach pmfile ($sc03_pm_string)
+echo $i >> sc03_output.item
+@ i++
+end
+end
+echo ""
+echo "** sc03_output.item has been produced **"
+#
+# make run_sc03.exec file on MODEL dirs if multi
+# make run_sc03 on orig dir if only 1 pm
+#
+
+echo ""
+set i=1
+foreach pmfile ($sc03_pm_string)
+
+if ($onepm == "1") then
+	set runexecfile = "run_sc03.exec"
+else
+	set runexecfile = "MODEL${i}/run_sc03.exec"
+endif
+
+echo "RD pm $pmfile" > $runexecfile		# read in the pm file
+echo 'RD usp sc03_input.usp' >> $runexecfile		# read in the usp file 
+echo 'run scf' >> $runexecfile				# run sc03
+echo 'index' >> $runexecfile				# use current file names when writing
+# write out graphical items of the difference plots (specified in the output file)
+awk '{printf "WR item GR%s.item GR%s\n",$1,$1}' $output_file >> $runexecfile
+echo "quit y" >> $runexecfile				# quit SC03
+chmod 744 $runexecfile 
+#
+echo "** $runexecfile has been produced **"
+@ i++
+end
+
+
+
+
+#
+# make run_script.script file
+#
+echo '#\!/bin/csh -f' > run_script.script
+echo "unset noclobber" >> run_script.script
+if ($onepm == "1") then
+	echo 'cp sc03_input.usp HISTORY/sc03_input_$$.usp' >> run_script.script
+else
+	echo 'set dir=$cwd' >> run_script.script
+	echo 'foreach model (MODEL?)' >> run_script.script
+	echo 'cp sc03_input.usp $model/HISTORY/sc03_input_$$.usp' >> run_script.script
+	echo 'cp sc03_input.usp $model/sc03_input.usp' >> run_script.script
+	echo 'cd $dir/$model' >> run_script.script
+endif
+echo 'echo "starting sc03"' >> run_script.script
+echo "setenv SC03_MEMORY $mem" >> run_script.script
+#
+# 2 different ways of running sc03 (comment out one as applicable)
+#
+# interactive
+echo '# /usr/rreng/script/sc03 -c run_sc03.exec > sc03.diag' >> run_script.script
+#
+# or in the background
+echo 'cp ~/.sc03init ~/.sc03init.bacup' >> run_script.script
+echo '/usr/rreng/bin/sc03_load -b < run_sc03.exec > sc03.diag' >> run_script.script
+echo 'cp ~/.sc03init.bacup ~/.sc03init' >> run_script.script
+#
+echo 'echo "sc03 finished"' >> run_script.script
+if ($onepm == "1") then
+	awk -f ~u408651/bin9/sc03/make_error_pass.awk $output_file >> run_script.script
+else
+	echo 'cd $dir' >> run_script.script
+	awk -f ~u408651/bin9/sc03/make_error_pass.awk.multi $output_file >> run_script.script
+	echo 'cp sc03_output.item $model/HISTORY/sc03_output_$$.item' >> run_script.script
+	echo 'end' >> run_script.script
+endif
+echo 'echo "iteration complete"' >> run_script.script
+echo "exit 0" >> run_script.script
+chmod 744 run_script.script
+#
+echo ""
+echo "** run_script.script has been produced **"
+echo ""
+
+
+
+
+# if sum_error.awk does not exist then create it
+
+# if one pm file
+if ($onepm == "1") then
+	if (! -e "sum_error.awk" ) then
+		echo "** copying sum_error.awk from ~u408651/bin9/sc03/sum_error.awk **"
+		cp ~u408651/bin9/sc03/sum_error.awk sum_error.awk
+	else
+		echo "** sum_error.awk already exists **"
+	endif
+else
+# for multi pm files
+	set i = 1
+	while ( $i <= $numpm )
+
+	if (! -e "MODEL${i}/sum_error${i}.awk" ) then
+		if ( -e "sum_error.awk" ) then
+			echo "** copying MODEL${i}/sum_error${i}.awk from ${cwd}/sum_error.awk **"
+			cp sum_error.awk MODEL${i}/sum_error${i}.awk
+		else
+			echo "** MODEL${i}/copying sum_error${i}.awk from ~u408651/bin9/sc03/sum_error.awk **"
+			cp ~u408651/bin9/sc03/sum_error.awk MODEL${i}/sum_error${i}.awk
+		endif
+		chmod 744 MODEL${i}/sum_error${i}.awk
+	else
+		echo "** MODEL${i}/sum_error${i}.awk already exists **"
+	endif
+	@ i++
+	end
+endif
+	echo ""
+# if HISTORY does not exist then create it
+# if just one pm file
+if ($onepm == "1") then
+	if (! -e HISTORY ) then
+		echo "** creating HISTORY directory **"
+		mkdir HISTORY
+	else
+		echo "** HISTORY directory exists **"
+	endif
+else
+# for multi pm files
+	foreach model (MODEL?) 
+	if (! -e $model/HISTORY ) then
+		echo "** creating $model/HISTORY directory **"
+		mkdir $model/HISTORY
+	else
+		echo "** $model/HISTORY directory exists **"
+	endif
+	end
+endif
+echo ""
+if ($onepm == "1") then
+	echo "** Don't forget to alter sum_error.awk to suit your cycle **"
+else
+	echo "** Don't forget to alter sum_error.awk files to suit the cycles **"
+endif
+echo ""

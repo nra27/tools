@@ -1,0 +1,375 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<LINK 
+href="../_components/required_stylesheets/common.css" media=screen rel=stylesheet title=common>
+<LINK 
+href="../_components/required_stylesheets/print.css" media=print rel=stylesheet title=common>
+<style>
+@media print
+{
+table { width: 0%}
+}
+</style>
+<title>2d tutorial - geometry and meshing</title>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<!--webbot bot="Include" U-Include="../_components/header/header.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="15%" bgcolor="#00125B">
+      <p align="center">&nbsp;</td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap0">
+      <area href="../default.htm" shape="rect" coords="2, 3, 325, 58"></map><img border="0" src="../_components/header/thermomech.png" width="326" height="60" usemap="#FPMap0"></td>
+    <td width="35%" bgcolor="#00125B">
+      <map name="FPMap1">
+      <area href="http://www.infocentre.rolls-royce.com" shape="rect" coords="3, 1, 196, 59"></map><img border="0" src="../_components/header/rr.png" align="right" width="197" height="60" usemap="#FPMap1"></td>
+    <td width="15%" bgcolor="#00125B">
+      &nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#00125B" bordercolor="#00125B">
+  <tr>
+    <td width="100%">
+      <table border="0" cellspacing="0" width="100%" cellpadding="0" bordercolor="#00125B" bgcolor="#00125B">
+        <tr>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/default.htm">Home</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/newstarter/default.htm">About
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/general/introduction.htm#Feedback">Contact
+            us</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal_cop/organisation/default.html">Organisation</a></td>
+          <td width="20%" align="center" bgcolor="#FFFFFF" valign="middle" bordercolor="#00125B" class="mediumText"><a href="/genthermal/topic/search.htm">Search</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!--webbot bot="Include" endspan i-checksum="27619" -->
+
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=10 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD>
+      <p class="breadcrumb">you are here: <a href="http://www.capability.rolls-royce.com/">Capability
+      </a>&gt; <a href="/genthermal/default.htm">Thermo-Mechanics</a> &gt; <a href="../default.htm">Training</a>
+      &gt; <a href="default.htm"> 2D Tutorial</a></p>
+    </TD></CENTER>
+    <TD>
+      <p class="breadcrumb" align="right">
+                            <span class="footlinks"><a class="footlinks" href="introduction.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="geom_mesh2.htm">next page</a></span>
+    </TD></TR></TBODY></TABLE></DIV>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD vAlign=top bgcolor="#D1D4E7" width="15%">
+      <!--webbot bot="Include" U-Include="../_components/menu_bars/trainingbar.htm"
+      TAG="BODY" startspan -->
+
+      <UL>
+        <LI><a href="/genthermal/best_practices/thermo_mech/default.htm">Thermo-mech Process</a>
+        <LI><a href="/genthermal/best_practices/thermo_mech/procedures/default.htm">Procedures</a>
+        <LI><a href="/genthermal/best_practices/default.htm">Best Practices</a>
+        <LI><a href="/genthermal/best_practices/temperature/default.htm">Temperature Analysis</a>
+        <LI><a href="/genthermal/best_practices/displacement/default.htm">Displacement Analysis</a>
+        <LI><a href="/thermofluids_cfd/default.htm">CFD Analysis</a>
+        <LI><a href="/genthermal/best_practices/components/default.htm">Components</a>
+        <LI><a href="/genthermal/best_practices/analysis_tools/default.htm">Analysis Tools</a>
+        <LI><a href="/thermofluids_research/default.htm">Research Activities</a>
+        <LI><a href="/validation_database/default.htm">Validation Database</a>
+        <LI><a href="../default.htm">Training</a>
+        <LI><a href="/genthermal/checklists/checklists.html">Checklists</a>
+        <LI><a href="../../lessons_thermo_mechanical_analysis/Thermo_mechanics/Approved/approved.htm">Lessons Learnt</a>
+        <LI><a href="/genthermal_cop/default.htm">Community of Practice</a>
+        <LI><a href="/genthermal/topic/general_refs.htm">General References</a>
+        <LI><a href="/genthermal_cop/experts/experts.html">People</a>
+        <LI><a href="/genthermal/topic/help.htm">Help</a>
+      </UL>
+
+      <h2>&nbsp;</h2>
+
+      <p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+<!--webbot bot="Include" endspan i-checksum="22422" -->
+
+      <p>&nbsp;
+    </TD>
+    <TD vAlign=top width="70%">
+						<table width="100%" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td>
+      <h1>SC03 2D Thermal Modelling</h1>
+      <p class="largehead">Section 2: 2D Geometry Construction &amp; Meshing</p>
+                                    <h6 class="largehead"><a name="Objectives">Objectives of this
+                                    Section</a></h6>
+                                    <p class="mediumText">When you have
+                                    completed this section you will be able to:</p>
+                                    <ul>
+                                      <li>
+                                        <p class="mediumText">give examples of
+                                        settings (in the 2D geometry palette)
+                                        which need to be adjusted for 2D
+                                        geometry manipulation</li>
+                                      <li>
+                                        <p class="mediumText">identify the main
+                                        stages involved in creating 2D geometry</li>
+                                      <li>
+                                        <p class="mediumText">explain what is
+                                        meant by &quot;chaining&quot; geometry</li>
+                                      <li>
+                                        <p class="mediumText">list the steps
+                                        undertaken during the automatic meshing
+                                        process</li>
+                                    </ul>
+                                    <h6 class="largehead"><a name="Learning">Learning Points of this
+                                    Section</a><font color="#FF0000"> &nbsp;</font></h6>
+      <ol>
+        <li>
+          <p class="mediumText"><a href="#BasicGeometry">Accessing the 2D
+                                    Geometry commands list and adjusting
+                                    settings</a></li>
+        <li>
+          <p class="mediumText"><a href="#BasicGeometry2">Using coordinates to
+                                    draw lines</a></li>
+        <li>
+          <p class="mediumText"><a href="geom_mesh2.htm#BasicGeometry4">Using the Create
+                                    Rectangle option to create geometry</a></li>
+        <li>
+          <p class="mediumText"><a href="geom_mesh2.htm#Chaingeometry">Chaining geometry</a></li>
+        <li>
+          <p class="mediumText"><a href="geom_mesh2.htm#MarkInternalLines">Marking internal lines</a></li>
+        <li>
+          <p class="mediumText"><a href="geom_mesh2.htm#meshing">Automatic meshing</a></li>
+      </ol>
+                                        <p class="mediumText">&nbsp;
+												<hr size="1" width="100%">
+                                    <p class="largehead"><a name="BasicGeometry">Basic 2D Geometry
+                                    Construction</a></p>
+                                    <p class="mediumText">Before beginning this
+                                    section you should already have an SC03
+                                    session open. If not, return to the section
+                                    on how to start an SC03 session. Click <a href="introduction.htm#Starting_SC03">here</a>
+                                    if SC03 is not yet running</p>
+                                    <p class="mediumText">In this section we are
+                                    to construct the 2D geometry for the problem
+                                    described in the User Guide. To do this we
+                                    use 2D geometry commands.</p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Open the <b>Model Menu</b> by
+                            selecting <b> Model </b> with the left mouse button</td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText" align="center"><img border="0" src="images/2dtutor.sc03_filemodel_menubar.gif" width="191" height="126"></p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">then select <b> 2D
+                                    Geometry Commands</b> with the left mouse
+                                    button.&nbsp;</td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText">&nbsp;</p>
+                                    <p class="mediumText">This panel can be
+                                    'torn off' to float over the window in a
+                                    similar way to other 'tear-off' menus.</p>
+                                    <p class="mediumText">A floating palette of
+                                    names will now appear on the sc03 screen
+                                    similar to the one shown below. This box can
+                                    be moved around the screen, using the mouse.</p>
+                                    <p class="mediumText" align="center"><img border="0" src="images/2dgeom1.jpg" width="348" height="506"></p>
+                                    <p class="mediumText">The 2D geometry
+                                    palette includes a settings option, which
+                                    enables control of options relevant to 2D
+                                    geometry manipulation.</p>
+                                    <p class="mediumText">Tolerance is normally
+                                    set automatically as 1/3 of the length of
+                                    the shortest entry. If the <b> AXISYMMETRIC</b> flag
+                                    is set on, geometry found with a negative Y
+                                    co-ordinate will cause an error.</p>
+                                    <p class="mediumText" align="center"><img border="0" src="images/2dgeom2.gif" width="380" height="303"></p>
+                                    <p class="mediumText">&nbsp;</p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Click <b> CANCEL</b> to close
+                                    the settings box.</td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText">&nbsp;</p>
+												<hr size="1" width="100%">
+      <p class="largehead"><a name="BasicGeometry2">Creating Lines</a></p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                                    <p class="mediumText">To start constructing
+                                    the geometry, move the arrow into the <b> 2D
+                                    Geometry Commands</b> box, and choose <b> Line</b> with
+                                    the left mouse button. A cross will now
+                                    appear on the SC03 screen. We will draw our
+                                    geometry lines by using co-ordinates, as
+                                    this is more precise than the other options.</p>
+                                    <p class="mediumText">Press &amp; Hold the
+                                    right mouse button then select the <b>Coords
+                                    </b>
+                                    option in the sub-menu.</p>
+                          </td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText">&nbsp;</p>
+                                    <p class="mediumText" align="center"><img border="0" src="images/2dtutor.drawline_co-ord_RH_menu.gif" width="83" height="172"></p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Type in the STARTING
+                                    co-ordinates</td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText" align="center"><img border="0" src="images/2dtutor.start_co-ord_panel.gif" width="297" height="146"></p>
+                                    <p class="mediumText">&nbsp;</p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Select <b> OK</b> using the left
+                                    mouse button.</td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText">You have now specified
+                                    the starting co-ordinates of the first
+                                    geometry line. A yellow line should now have
+                                    appeared (which can be moved around the
+                                    screen). This line needs a finishing point,
+                                    so:</p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE">
+                            <p class="mediumText">Press the right mouse button
+                                    and choose <b>Coords</b> option again. Type in
+                            the FINISHING co-ordinates.</td>
+                        </tr>
+                      </table>
+                                    <p class="mediumText" align="center"><img border="0" src="images/2dtutor.end_co-ord_panel.gif" width="297" height="146"></p>
+                      <table border="1" width="100%" cellspacing="0" cellpadding="10" bordercolor="#C4E8E5" height="38">
+                        <tr>
+                          <td width="100%" bgcolor="#D8F0EE" height="16">
+                            <p class="mediumText">Select <b> OK</b> again using the left
+                                    mouse button.</td>
+                        </tr>
+                      </table>
+												<hr size="1" width="100%">
+									<p>Page Author (s): <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+                                    Barnes<br>
+                                    </a>Page Version: 2.0<br>
+                                    Last Update:<!--webbot bot="Timestamp"
+                                    S-Type="EDITED" S-Format="%d/%m/%Y" startspan -->23/11/2006<!--webbot bot="Timestamp" endspan i-checksum="12520" -->
+      </p>
+								</td>
+							</tr>
+						</table>
+						<div align="center">
+							<p><br>
+                            <span class="footlinks"><a class="footlinks" href="introduction.htm">back to previous</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="#top">top of the page</a>
+                            </span>| <span class="footlinks"><a class="footlinks" href="geom_mesh2.htm">next page<br>
+										<br>
+                            </a></span></p>
+						</div>
+    </CENTER></TD>
+<CENTER>
+      <td width="15%" valign="top" bgcolor="#E8E9F3">
+        <!--webbot bot="Include"
+        U-Include="../_components/menu_bars/2d_tutorial_links.htm" TAG="BODY" startspan -->
+
+      <h2 align="left"><b>2D Tutorial Links</b></h2>
+
+      <UL>
+        <LI><a href="default.htm">Menu</a>
+        <LI><a href="default.htm#Aims">Aims and Objectives</a>
+        <LI><a href="default.htm#Guide">User Guide</a>
+        <LI><a href="introduction.htm">Introduction</a>
+        <LI><a href="geom_mesh.htm">Geometry &amp; Mesh</a>
+        <LI><a href="Cycle_definitions.htm">Cycle
+          Definitions</a>
+        <LI><a href="vw34.htm">VW34 (<i>optional)</i></a>
+        <LI><a href="boundary_conditions.htm">Boundary
+          Conditions</a>
+        <LI><a href="model_controls.htm">Model Controls</a>
+        <LI><a href="thermal_analysis.htm">Thermal analysis</a>
+        <LI><a href="results_processing.htm">Results
+          Processing</a>
+        <LI><a href="mastery_test.htm">Mastery Test</a>
+      </UL>
+
+<!--webbot bot="Include" endspan i-checksum="55882" -->
+
+        <p>&nbsp;
+
+      </td>
+  </TR>
+  </TBODY></TABLE></CENTER>
+<DIV align=center>
+<CENTER>
+<TABLE border=0 cellPadding=5 cellSpacing=0 width=100%>
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width="778">&nbsp; </TD></TR>
+  </TBODY></TABLE></CENTER></DIV><!-- End ImageReady Slices -->
+<!--webbot bot="Include" U-Include="../_components/footer/footer.htm" TAG="BODY" startspan -->
+
+  <center>
+
+<table width="70%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td align="left" vAlign="top" colspan="2" width="100%">
+      <hr noshade size="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="left" vAlign="top" width="50%">Web Editors: <a href="/genthermal_cop/experts/517727_laurie_snowsill.html"> Laurie
+      Snowsill</a>, <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Topic Web Number:&nbsp;DNS57941<br>
+    Current Web Version: 14.0<br>
+    Last Updated: 15/12/2006</td>
+    <td align="left" vAlign="top" width="50%">Technical
+    Authority: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a><br>
+    Capability Owner: <a href="/genthermal_cop/experts/405584.chris_barnes.html">Chris
+      Barnes</a> <br>
+    Process Owner: <a href="/genthermal_cop/experts/32769.jeff_dixon.html">Jeff
+      Dixon</a></td>
+  </tr>
+  <tr>
+    <td align="left" colSpan="2" vAlign="top" width="100%">Security Classification: Uncontrolled when printed</td>
+  </tr>
+  <tr>
+    <td colSpan="2" align="left" vAlign="top" width="100%">
+      © 2006 Rolls-Royce plc<br>
+      This document contains information which is proprietary and confidential
+      to Rolls-Royce plc which may not without prior consent of Rolls-Royce plc
+      be used or reproduced, in whole or in part, or communicated to any person
+      not employed by Rolls-Royce plc</td>
+  </tr>
+</table>
+
+  </center>
+
+<!--webbot bot="Include" endspan i-checksum="58695" -->
+
+</body>
+
+</html>

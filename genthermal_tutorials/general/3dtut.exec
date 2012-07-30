@@ -1,0 +1,36 @@
+# Exec file to create the 3d tutorial STEP via tags
+#
+# Version 1
+# Chris Barnes
+# 15/6/2004
+#
+# Read in STEP file
+rd step db_fe.v3.stp
+# Read in the bdd file
+rd bdd tutorial2d.span.bdd
+# Read in the genbp file
+# Note that this is the file written from previous model
+# But with STRCNTL and THRCNTL removed (refer to expressions)
+rd gbp 3dtut.gbp
+# Mesh the geometry
+mesh
+# Call a second exec file to set global control to thermal
+#include "3dtut.global.exec"
+# run the model
+call scf
+# ensure that the default result file name is used
+openver
+rd fem sc03.jobid.fem
+index
+# Plot metal temperatures at max take off
+case static 5 1 0
+ctp tk
+# make isometric view and 'find', then print
+sview 7
+locate
+sdump 3dtut.png
+# Write out final database
+wr pm 3dtut.final.pm
+
+
+

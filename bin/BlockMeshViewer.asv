@@ -1,0 +1,65 @@
+%
+% -- BlockMeshViewer(grid,skip,[b])
+%
+% NRA Feb 2010
+%
+% Plots the mesh, with skips
+% 
+% 'grid' is output from TblockGetGrid.m
+%
+% Leave n out to get the whole mesh
+% 
+% Specify a range to get what you need
+%
+% Remember, you can't always get what you want....
+%
+
+function BlockMeshViewer(grid,skip,varargin)
+
+% Loop over all of the blocks, plotting only the mesh
+
+if size(varagin(1)) >= 0,
+    blk = varagiblk(n);
+else
+    blk = 1:grid.nblocks;
+end
+
+for n = 1:length(blk),
+    
+    % Convert to r [m], th [rads]
+    r = grid.block(blk(n)).r;
+    t = -grid.block(blk(n)).rt./grid.block(blk(n)).r;
+    
+    % Convert to x y z to plot in Matlab cartesian
+    x = grid.block(blk(n)).x;
+    y = -r.*sin(t);
+    z = r.*cos(t);
+      
+    % find the size of the blocks
+    im = grid.block(blk(n)).im;
+    jm = grid.block(blk(n)).jm;
+    km = grid.block(blk(n)).km;
+    
+    % i = 1 face
+    plot3(squeeze(x(1,[1:skip:jm],[1:skip:km])),squeeze(y(1,[1:skip:jm],[1:skip:km])),squeeze(z(1,[1:skip:jm],[1:skip:km])),clr(blk(n)))
+    hold on 
+    plot3(squeeze(x(1,[1:skip:jm],[1:skip:km]))',squeeze(y(1,[1:skip:jm],[1:skip:km]))',squeeze(z(1,[1:skip:jm],[1:skip:km]))',clr(blk(n)))
+    
+    % i = im face
+    plot3(squeeze(x(im,[1:skip:jm],[1:skip:km])),squeeze(y(im,[1:skip:jm],[1:skip:km])),squeeze(z(im,[1:skip:jm],[1:skip:km])),clr(blk(n)))
+    plot3(squeeze(x(im,[1:skip:jm],[1:skip:km]))',squeeze(y(im,[1:skip:jm],[1:skip:km]))',squeeze(z(im,[1:skip:jm],[1:skip:km]))',clr(blk(n)))
+    
+    % j = 1 face
+    plot3(squeeze(x([1:skip:im],1,[1:skip:km])),squeeze(y([1:skip:im],1,[1:skip:km])),squeeze(z([1:skip:end],1,[1:skip:km])),clr(blk(n)))
+    plot3(squeeze(x([1:skip:im],1,[1:skip:km]))',squeeze(y([1:skip:im],1,[1:skip:km]))',squeeze(z([1:skip:end],1,[1:skip:km]))',clr(blk(n)))
+   
+    % j = jm face
+    plot3(squeeze(x([1:skip:im],jm,[1:skip:km])),squeeze(y([1:skip:im],jm,[1:skip:km])),squeeze(z([1:skip:end],jm,[1:skip:km])),clr(blk(n)))
+    plot3(squeeze(x([1:skip:im],jm,[1:skip:km]))',squeeze(y([1:skip:im],jm,[1:skip:km]))',squeeze(z([1:skip:end],jm,[1:skip:km]))',clr(blk(n)))
+    
+end
+
+axis equal
+xlabel('i direction (m)')
+   
+
